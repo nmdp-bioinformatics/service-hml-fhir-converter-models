@@ -25,7 +25,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.base;
  */
 
 import org.apache.log4j.Logger;
+
 import org.modelmapper.ModelMapper;
+
 import org.nmdp.hmlfhirconvertermodels.util.Converters;
 import org.nmdp.hmlfhirconvertermodels.util.MappingConverter;
 import org.nmdp.hmlfhirconvertermodels.util.ModelMapperFactory;

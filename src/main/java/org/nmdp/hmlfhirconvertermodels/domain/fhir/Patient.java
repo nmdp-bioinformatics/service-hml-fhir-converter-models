@@ -27,7 +27,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 import java.util.Date;
 
 public class Patient {
-    private String identifier;
+    private Identifier identifier;
     private Boolean active;
     private String name;
     private String telecom;
@@ -41,11 +41,11 @@ public class Patient {
     private Practitioner generalPractitioner;
     private Organization managingOrganization;
 
-    public String getIdentifier() {
+    public Identifier getIdentifier() {
         return identifier;
     }
 
-    public void setIdentifier(String identifier) {
+    public void setIdentifier(Identifier identifier) {
         this.identifier = identifier;
     }
 

@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.DateTime;
 import org.nmdp.hmlfhirconvertermodels.dto.ConsensusSequenceBlock;
 import org.nmdp.hmlfhirconvertermodels.dto.ReferenceDatabase;
 import java.io.Serializable;
@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 /**
  * ConsensusSequence
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-26T09:05:03.785-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-31T16:18:13.752-05:00")
 
 public class ConsensusSequence  implements Serializable {
   @JsonProperty("active")
@@ -25,13 +25,13 @@ public class ConsensusSequence  implements Serializable {
   private List<ConsensusSequenceBlock> consensusSequenceBlocks = new ArrayList<ConsensusSequenceBlock>();
 
   @JsonProperty("date")
-  private DateTime date = null;
+  private Date date = null;
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private Date dateCreated = null;
 
   @JsonProperty("dateUpdated")
-  private DateTime dateUpdated = null;
+  private Date dateUpdated = null;
 
   @JsonProperty("id")
   private String id = null;
@@ -80,7 +80,7 @@ public class ConsensusSequence  implements Serializable {
     this.consensusSequenceBlocks = consensusSequenceBlocks;
   }
 
-  public ConsensusSequence date(DateTime date) {
+  public ConsensusSequence date(Date date) {
     this.date = date;
     return this;
   }
@@ -90,15 +90,15 @@ public class ConsensusSequence  implements Serializable {
    * @return date
   **/
   @ApiModelProperty(value = "date created")
-  public DateTime getDate() {
+  public Date getDate() {
     return date;
   }
 
-  public void setDate(DateTime date) {
+  public void setDate(Date date) {
     this.date = date;
   }
 
-  public ConsensusSequence dateCreated(DateTime dateCreated) {
+  public ConsensusSequence dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -108,15 +108,15 @@ public class ConsensusSequence  implements Serializable {
    * @return dateCreated
   **/
   @ApiModelProperty(value = "Creation date")
-  public DateTime getDateCreated() {
+  public Date getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public ConsensusSequence dateUpdated(DateTime dateUpdated) {
+  public ConsensusSequence dateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
     return this;
   }
@@ -126,11 +126,11 @@ public class ConsensusSequence  implements Serializable {
    * @return dateUpdated
   **/
   @ApiModelProperty(value = "Date updated")
-  public DateTime getDateUpdated() {
+  public Date getDateUpdated() {
     return dateUpdated;
   }
 
-  public void setDateUpdated(DateTime dateUpdated) {
+  public void setDateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
   }
 

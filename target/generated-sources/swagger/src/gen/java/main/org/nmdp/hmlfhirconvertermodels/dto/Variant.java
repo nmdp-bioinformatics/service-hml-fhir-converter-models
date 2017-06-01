@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
+import java.util.Date;
 import org.nmdp.hmlfhirconvertermodels.dto.VariantEffect;
 import java.io.Serializable;
 import javax.validation.constraints.*;
 /**
  * Variant
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-26T09:05:03.785-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-31T16:18:13.752-05:00")
 
 public class Variant  implements Serializable {
   @JsonProperty("active")
@@ -25,10 +25,10 @@ public class Variant  implements Serializable {
   private Object anyAttribute = null;
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private Date dateCreated = null;
 
   @JsonProperty("dateUpdated")
-  private DateTime dateUpdated = null;
+  private Date dateUpdated = null;
 
   @JsonProperty("end")
   private Integer end = null;
@@ -114,7 +114,7 @@ public class Variant  implements Serializable {
     this.anyAttribute = anyAttribute;
   }
 
-  public Variant dateCreated(DateTime dateCreated) {
+  public Variant dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -124,15 +124,15 @@ public class Variant  implements Serializable {
    * @return dateCreated
   **/
   @ApiModelProperty(value = "Creation date")
-  public DateTime getDateCreated() {
+  public Date getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Variant dateUpdated(DateTime dateUpdated) {
+  public Variant dateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
     return this;
   }
@@ -142,11 +142,11 @@ public class Variant  implements Serializable {
    * @return dateUpdated
   **/
   @ApiModelProperty(value = "Date updated")
-  public DateTime getDateUpdated() {
+  public Date getDateUpdated() {
     return dateUpdated;
   }
 
-  public void setDateUpdated(DateTime dateUpdated) {
+  public void setDateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
   }
 

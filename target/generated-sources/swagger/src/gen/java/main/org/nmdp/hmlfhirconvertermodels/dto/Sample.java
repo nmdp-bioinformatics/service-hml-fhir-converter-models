@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.DateTime;
 import org.nmdp.hmlfhirconvertermodels.dto.CollectionMethod;
 import org.nmdp.hmlfhirconvertermodels.dto.Property;
 import org.nmdp.hmlfhirconvertermodels.dto.Typing;
@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 /**
  * Sample
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-26T09:05:03.785-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-31T16:18:13.752-05:00")
 
 public class Sample  implements Serializable {
   @JsonProperty("active")
@@ -29,10 +29,10 @@ public class Sample  implements Serializable {
   private List<CollectionMethod> collectionMethods = new ArrayList<CollectionMethod>();
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private Date dateCreated = null;
 
   @JsonProperty("dateUpdated")
-  private DateTime dateUpdated = null;
+  private Date dateUpdated = null;
 
   @JsonProperty("sampleId")
   private String sampleId = null;
@@ -105,7 +105,7 @@ public class Sample  implements Serializable {
     this.collectionMethods = collectionMethods;
   }
 
-  public Sample dateCreated(DateTime dateCreated) {
+  public Sample dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -115,15 +115,15 @@ public class Sample  implements Serializable {
    * @return dateCreated
   **/
   @ApiModelProperty(value = "Date record was created")
-  public DateTime getDateCreated() {
+  public Date getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Sample dateUpdated(DateTime dateUpdated) {
+  public Sample dateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
     return this;
   }
@@ -133,11 +133,11 @@ public class Sample  implements Serializable {
    * @return dateUpdated
   **/
   @ApiModelProperty(value = "Date updated")
-  public DateTime getDateUpdated() {
+  public Date getDateUpdated() {
     return dateUpdated;
   }
 
-  public void setDateUpdated(DateTime dateUpdated) {
+  public void setDateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
   }
 

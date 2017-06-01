@@ -6,25 +6,25 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.DateTime;
 import org.nmdp.hmlfhirconvertermodels.dto.Property;
 import java.io.Serializable;
 import javax.validation.constraints.*;
 /**
  * Ssp
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-26T09:05:03.785-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-31T16:18:13.752-05:00")
 
 public class Ssp  implements Serializable {
   @JsonProperty("active")
   private Boolean active = null;
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private Date dateCreated = null;
 
   @JsonProperty("dateUpdated")
-  private DateTime dateUpdated = null;
+  private Date dateUpdated = null;
 
   @JsonProperty("id")
   private String id = null;
@@ -62,7 +62,7 @@ public class Ssp  implements Serializable {
     this.active = active;
   }
 
-  public Ssp dateCreated(DateTime dateCreated) {
+  public Ssp dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -72,15 +72,15 @@ public class Ssp  implements Serializable {
    * @return dateCreated
   **/
   @ApiModelProperty(value = "Creation date")
-  public DateTime getDateCreated() {
+  public Date getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Ssp dateUpdated(DateTime dateUpdated) {
+  public Ssp dateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
     return this;
   }
@@ -90,11 +90,11 @@ public class Ssp  implements Serializable {
    * @return dateUpdated
   **/
   @ApiModelProperty(value = "Date updated")
-  public DateTime getDateUpdated() {
+  public Date getDateUpdated() {
     return dateUpdated;
   }
 
-  public void setDateUpdated(DateTime dateUpdated) {
+  public void setDateUpdated(Date dateUpdated) {
     this.dateUpdated = dateUpdated;
   }
 

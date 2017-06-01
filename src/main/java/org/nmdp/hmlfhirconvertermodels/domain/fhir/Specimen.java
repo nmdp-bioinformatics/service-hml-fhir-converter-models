@@ -27,7 +27,8 @@ import java.util.Date;
  */
 
 public class Specimen {
-    private String identifier;
+    private Identifier identifier;
+    private Collection collection;
     private String accessionIdentifier;
     private Enum<Status> status;
     private Date receivedTime;
@@ -36,12 +37,20 @@ public class Specimen {
     private String note;
     private Type type;
 
-    public String getIdentifier() {
+    public Identifier getIdentifier() {
         return identifier;
     }
 
-    public void setIdentifier(String identifier) {
+    public void setIdentifier(Identifier identifier) {
         this.identifier = identifier;
+    }
+
+    public Collection getCollection() {
+        return collection;
+    }
+
+    public void setCollection(Collection collection) {
+        this.collection = collection;
     }
 
     public String getAccessionIdentifier() {
