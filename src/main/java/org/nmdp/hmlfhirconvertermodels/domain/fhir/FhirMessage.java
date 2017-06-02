@@ -45,7 +45,6 @@ public class FhirMessage implements Serializable {
     private Specimens specimens;
     private Ssos ssos;
     private Ssps ssps;
-    private String id;
 
     public AlleleDatabases getAlleleDatabases() {
         return alleleDatabases;
@@ -173,14 +172,6 @@ public class FhirMessage implements Serializable {
 
     public void setSsps(Ssps ssps) {
         this.ssps = ssps;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     @Override
