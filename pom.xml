@@ -7,7 +7,7 @@
     <groupId>org.nmdp</groupId>
     <artifactId>service-hml-fhir-converter-models</artifactId>
     <packaging>jar</packaging>
-    <version>1.10.0-SNAPSHOT</version>
+    <version>1.11.0-SNAPSHOT</version>
     
     <properties>
     	<swagger-codegen-version>2.2.2</swagger-codegen-version>
