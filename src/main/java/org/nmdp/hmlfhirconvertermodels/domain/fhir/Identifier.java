@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Identifier {
+import java.io.Serializable;
+
+public class Identifier implements Serializable {
     private String system;
     private String value;
 
@@ -42,5 +44,23 @@ public class Identifier {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Identifier)) return false;
+
+        Identifier that = (Identifier) o;
+
+        if (getSystem() != null ? !getSystem().equals(that.getSystem()) : that.getSystem() != null) return false;
+        return getValue() != null ? getValue().equals(that.getValue()) : that.getValue() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getSystem() != null ? getSystem().hashCode() : 0;
+        result = 31 * result + (getValue() != null ? getValue().hashCode() : 0);
+        return result;
     }
 }

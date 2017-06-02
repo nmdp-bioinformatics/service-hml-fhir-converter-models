@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class GeneticsPhaseSet extends Observation {
+import java.io.Serializable;
+
+public class GeneticsPhaseSet extends Observation implements Serializable {
     private String phasingGroup;
     private String phaseSet;
 
@@ -42,5 +44,26 @@ public class GeneticsPhaseSet extends Observation {
 
     public void setPhaseSet(String phaseSet) {
         this.phaseSet = phaseSet;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GeneticsPhaseSet)) return false;
+        if (!super.equals(o)) return false;
+
+        GeneticsPhaseSet that = (GeneticsPhaseSet) o;
+
+        if (getPhasingGroup() != null ? !getPhasingGroup().equals(that.getPhasingGroup()) : that.getPhasingGroup() != null)
+            return false;
+        return getPhaseSet() != null ? getPhaseSet().equals(that.getPhaseSet()) : that.getPhaseSet() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getPhasingGroup() != null ? getPhasingGroup().hashCode() : 0);
+        result = 31 * result + (getPhaseSet() != null ? getPhaseSet().hashCode() : 0);
+        return result;
     }
 }

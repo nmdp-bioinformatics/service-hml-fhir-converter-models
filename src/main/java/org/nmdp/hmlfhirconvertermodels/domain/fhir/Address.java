@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String street1;
     private String street2;
     private String street3;
@@ -87,5 +89,36 @@ public class Address {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+
+        Address address = (Address) o;
+
+        if (getStreet1() != null ? !getStreet1().equals(address.getStreet1()) : address.getStreet1() != null)
+            return false;
+        if (getStreet2() != null ? !getStreet2().equals(address.getStreet2()) : address.getStreet2() != null)
+            return false;
+        if (getStreet3() != null ? !getStreet3().equals(address.getStreet3()) : address.getStreet3() != null)
+            return false;
+        if (getZip() != null ? !getZip().equals(address.getZip()) : address.getZip() != null) return false;
+        if (getState() != null ? !getState().equals(address.getState()) : address.getState() != null) return false;
+        if (getCity() != null ? !getCity().equals(address.getCity()) : address.getCity() != null) return false;
+        return getCountry() != null ? getCountry().equals(address.getCountry()) : address.getCountry() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getStreet1() != null ? getStreet1().hashCode() : 0;
+        result = 31 * result + (getStreet2() != null ? getStreet2().hashCode() : 0);
+        result = 31 * result + (getStreet3() != null ? getStreet3().hashCode() : 0);
+        result = 31 * result + (getZip() != null ? getZip().hashCode() : 0);
+        result = 31 * result + (getState() != null ? getState().hashCode() : 0);
+        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
+        result = 31 * result + (getCountry() != null ? getCountry().hashCode() : 0);
+        return result;
     }
 }

@@ -26,7 +26,9 @@ import java.util.Date;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Specimen {
+import java.io.Serializable;
+
+public class Specimen implements Serializable {
     private Identifier identifier;
     private Collection collection;
     private String accessionIdentifier;
@@ -107,5 +109,44 @@ public class Specimen {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Specimen)) return false;
+
+        Specimen specimen = (Specimen) o;
+
+        if (getIdentifier() != null ? !getIdentifier().equals(specimen.getIdentifier()) : specimen.getIdentifier() != null)
+            return false;
+        if (getCollection() != null ? !getCollection().equals(specimen.getCollection()) : specimen.getCollection() != null)
+            return false;
+        if (getAccessionIdentifier() != null ? !getAccessionIdentifier().equals(specimen.getAccessionIdentifier()) : specimen.getAccessionIdentifier() != null)
+            return false;
+        if (getStatus() != null ? !getStatus().equals(specimen.getStatus()) : specimen.getStatus() != null)
+            return false;
+        if (getReceivedTime() != null ? !getReceivedTime().equals(specimen.getReceivedTime()) : specimen.getReceivedTime() != null)
+            return false;
+        if (getParent() != null ? !getParent().equals(specimen.getParent()) : specimen.getParent() != null)
+            return false;
+        if (getRequest() != null ? !getRequest().equals(specimen.getRequest()) : specimen.getRequest() != null)
+            return false;
+        if (getNote() != null ? !getNote().equals(specimen.getNote()) : specimen.getNote() != null) return false;
+        return getType() != null ? getType().equals(specimen.getType()) : specimen.getType() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getIdentifier() != null ? getIdentifier().hashCode() : 0;
+        result = 31 * result + (getCollection() != null ? getCollection().hashCode() : 0);
+        result = 31 * result + (getAccessionIdentifier() != null ? getAccessionIdentifier().hashCode() : 0);
+        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        result = 31 * result + (getReceivedTime() != null ? getReceivedTime().hashCode() : 0);
+        result = 31 * result + (getParent() != null ? getParent().hashCode() : 0);
+        result = 31 * result + (getRequest() != null ? getRequest().hashCode() : 0);
+        result = 31 * result + (getNote() != null ? getNote().hashCode() : 0);
+        result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        return result;
     }
 }

@@ -24,5 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public enum Status {
+import java.io.Serializable;
+
+public enum Status implements Serializable {
 }

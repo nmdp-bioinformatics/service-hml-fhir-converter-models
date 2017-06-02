@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class ReferenceSequenceId {
+import java.io.Serializable;
+
+public class ReferenceSequenceId implements Serializable {
     private Identifier identifier;
 
     public Identifier getIdentifier() {
@@ -33,5 +35,20 @@ public class ReferenceSequenceId {
 
     public void setIdentifier(Identifier identifier) {
         this.identifier = identifier;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ReferenceSequenceId)) return false;
+
+        ReferenceSequenceId that = (ReferenceSequenceId) o;
+
+        return getIdentifier() != null ? getIdentifier().equals(that.getIdentifier()) : that.getIdentifier() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getIdentifier() != null ? getIdentifier().hashCode() : 0;
     }
 }

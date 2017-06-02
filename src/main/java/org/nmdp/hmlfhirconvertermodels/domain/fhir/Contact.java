@@ -24,5 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
 }

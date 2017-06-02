@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Specimen;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Specimens {
+public class Specimens implements Serializable {
     private List<Specimen> specimens;
 
     public List<Specimen> getSpecimens() {

@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Type {
+import java.io.Serializable;
+
+public class Type implements Serializable {
     private String specimenType;
 
     public String getSpecimenType() {
@@ -33,5 +35,20 @@ public class Type {
 
     public void setSpecimenType(String specimenType) {
         this.specimenType = specimenType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Type)) return false;
+
+        Type type = (Type) o;
+
+        return getSpecimenType() != null ? getSpecimenType().equals(type.getSpecimenType()) : type.getSpecimenType() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getSpecimenType() != null ? getSpecimenType().hashCode() : 0;
     }
 }

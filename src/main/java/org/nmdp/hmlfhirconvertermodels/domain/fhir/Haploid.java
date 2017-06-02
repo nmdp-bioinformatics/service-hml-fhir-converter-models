@@ -24,10 +24,12 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Haploid extends StructureDefinition {
+import java.io.Serializable;
+
+public class Haploid extends StructureDefinition implements Serializable {
     private String locus;
     private String method;
-    private String type;
+    private String haploidType;
 
     public String getLocus() {
         return locus;
@@ -45,7 +47,33 @@ public class Haploid extends StructureDefinition {
         this.method = method;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getHaploidType() {
+        return haploidType;
+    }
+
+    public void setHaploidType(String haploidType) {
+        this.haploidType = haploidType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Haploid)) return false;
+        if (!super.equals(o)) return false;
+
+        Haploid haploid = (Haploid) o;
+
+        if (getLocus() != null ? !getLocus().equals(haploid.getLocus()) : haploid.getLocus() != null) return false;
+        if (getMethod() != null ? !getMethod().equals(haploid.getMethod()) : haploid.getMethod() != null) return false;
+        return getHaploidType() != null ? getHaploidType().equals(haploid.getHaploidType()) : haploid.getHaploidType() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getLocus() != null ? getLocus().hashCode() : 0);
+        result = 31 * result + (getMethod() != null ? getMethod().hashCode() : 0);
+        result = 31 * result + (getHaploidType() != null ? getHaploidType().hashCode() : 0);
+        return result;
     }
 }

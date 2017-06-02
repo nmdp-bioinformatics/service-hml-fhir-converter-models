@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Repository {
+import java.io.Serializable;
+
+public class Repository implements Serializable {
     private Type type;
     private String uri;
     private String name;
@@ -78,5 +80,33 @@ public class Repository {
 
     public void setReadsetId(String readsetId) {
         this.readsetId = readsetId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Repository)) return false;
+
+        Repository that = (Repository) o;
+
+        if (getType() != null ? !getType().equals(that.getType()) : that.getType() != null) return false;
+        if (getUri() != null ? !getUri().equals(that.getUri()) : that.getUri() != null) return false;
+        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
+        if (getDatasetId() != null ? !getDatasetId().equals(that.getDatasetId()) : that.getDatasetId() != null)
+            return false;
+        if (getVariantsetId() != null ? !getVariantsetId().equals(that.getVariantsetId()) : that.getVariantsetId() != null)
+            return false;
+        return getReadsetId() != null ? getReadsetId().equals(that.getReadsetId()) : that.getReadsetId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getType() != null ? getType().hashCode() : 0;
+        result = 31 * result + (getUri() != null ? getUri().hashCode() : 0);
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getDatasetId() != null ? getDatasetId().hashCode() : 0);
+        result = 31 * result + (getVariantsetId() != null ? getVariantsetId().hashCode() : 0);
+        result = 31 * result + (getReadsetId() != null ? getReadsetId().hashCode() : 0);
+        return result;
     }
 }

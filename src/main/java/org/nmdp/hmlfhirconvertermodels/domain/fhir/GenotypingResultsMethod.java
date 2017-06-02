@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class GenotypingResultsMethod extends StructureDefinition {
+import java.io.Serializable;
+
+public class GenotypingResultsMethod extends StructureDefinition implements Serializable {
     private String testId;
     private String testIdSource;
 
@@ -42,5 +44,25 @@ public class GenotypingResultsMethod extends StructureDefinition {
 
     public void setTestIdSource(String testIdSource) {
         this.testIdSource = testIdSource;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GenotypingResultsMethod)) return false;
+        if (!super.equals(o)) return false;
+
+        GenotypingResultsMethod that = (GenotypingResultsMethod) o;
+
+        if (getTestId() != null ? !getTestId().equals(that.getTestId()) : that.getTestId() != null) return false;
+        return getTestIdSource() != null ? getTestIdSource().equals(that.getTestIdSource()) : that.getTestIdSource() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getTestId() != null ? getTestId().hashCode() : 0);
+        result = 31 * result + (getTestIdSource() != null ? getTestIdSource().hashCode() : 0);
+        return result;
     }
 }

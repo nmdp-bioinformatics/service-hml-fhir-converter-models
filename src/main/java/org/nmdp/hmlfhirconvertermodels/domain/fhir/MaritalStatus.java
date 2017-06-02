@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public enum MaritalStatus {
+import java.io.Serializable;
+
+public enum MaritalStatus implements Serializable {
     DIVORCED,
     WIDOWED,
     MARRIED,

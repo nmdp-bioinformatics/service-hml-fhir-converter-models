@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Collection {
+import java.io.Serializable;
+
+public class Collection implements Serializable {
     private String method;
     private String bodySite;
 
@@ -42,5 +44,23 @@ public class Collection {
 
     public void setBodySite(String bodySite) {
         this.bodySite = bodySite;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Collection)) return false;
+
+        Collection that = (Collection) o;
+
+        if (getMethod() != null ? !getMethod().equals(that.getMethod()) : that.getMethod() != null) return false;
+        return getBodySite() != null ? getBodySite().equals(that.getBodySite()) : that.getBodySite() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getMethod() != null ? getMethod().hashCode() : 0;
+        result = 31 * result + (getBodySite() != null ? getBodySite().hashCode() : 0);
+        return result;
     }
 }

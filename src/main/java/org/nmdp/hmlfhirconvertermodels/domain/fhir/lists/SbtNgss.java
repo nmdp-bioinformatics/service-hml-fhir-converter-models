@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.SbtNgs;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class SbtNgss {
+public class SbtNgss implements Serializable {
     private List<SbtNgs> sbtNgss;
 
     public List<SbtNgs> getSbtNgss() {

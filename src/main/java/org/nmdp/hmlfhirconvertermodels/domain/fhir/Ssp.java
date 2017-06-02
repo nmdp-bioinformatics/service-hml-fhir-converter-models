@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Ssp extends Observation {
+import java.io.Serializable;
+
+public class Ssp extends Observation implements Serializable {
     private String locus;
 
     public String getLocus() {
@@ -33,5 +35,20 @@ public class Ssp extends Observation {
 
     public void setLocus(String locus) {
         this.locus = locus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ssp)) return false;
+
+        Ssp ssp = (Ssp) o;
+
+        return getLocus() != null ? getLocus().equals(ssp.getLocus()) : ssp.getLocus() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getLocus() != null ? getLocus().hashCode() : 0;
     }
 }

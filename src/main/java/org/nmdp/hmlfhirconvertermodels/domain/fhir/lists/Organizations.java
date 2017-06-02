@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Organization;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Organizations {
+public class Organizations implements Serializable {
     private List<Organization> organizations;
 
     public List<Organization> getOrganizations() {

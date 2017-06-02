@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class BackboneElement {
+import java.io.Serializable;
+
+public class BackboneElement implements Serializable {
     private Chromosome chromosome;
     private String genomeBuild;
     private ReferenceSequenceId referenceSequenceId;
@@ -96,5 +98,41 @@ public class BackboneElement {
 
     public void setWindowEnd(Integer windowEnd) {
         this.windowEnd = windowEnd;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BackboneElement)) return false;
+
+        BackboneElement that = (BackboneElement) o;
+
+        if (getChromosome() != null ? !getChromosome().equals(that.getChromosome()) : that.getChromosome() != null)
+            return false;
+        if (getGenomeBuild() != null ? !getGenomeBuild().equals(that.getGenomeBuild()) : that.getGenomeBuild() != null)
+            return false;
+        if (getReferenceSequenceId() != null ? !getReferenceSequenceId().equals(that.getReferenceSequenceId()) : that.getReferenceSequenceId() != null)
+            return false;
+        if (getReferenceSeqPointer() != null ? !getReferenceSeqPointer().equals(that.getReferenceSeqPointer()) : that.getReferenceSeqPointer() != null)
+            return false;
+        if (getReferenceSeqString() != null ? !getReferenceSeqString().equals(that.getReferenceSeqString()) : that.getReferenceSeqString() != null)
+            return false;
+        if (getStrand() != null ? !getStrand().equals(that.getStrand()) : that.getStrand() != null) return false;
+        if (getWindowStart() != null ? !getWindowStart().equals(that.getWindowStart()) : that.getWindowStart() != null)
+            return false;
+        return getWindowEnd() != null ? getWindowEnd().equals(that.getWindowEnd()) : that.getWindowEnd() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getChromosome() != null ? getChromosome().hashCode() : 0;
+        result = 31 * result + (getGenomeBuild() != null ? getGenomeBuild().hashCode() : 0);
+        result = 31 * result + (getReferenceSequenceId() != null ? getReferenceSequenceId().hashCode() : 0);
+        result = 31 * result + (getReferenceSeqPointer() != null ? getReferenceSeqPointer().hashCode() : 0);
+        result = 31 * result + (getReferenceSeqString() != null ? getReferenceSeqString().hashCode() : 0);
+        result = 31 * result + (getStrand() != null ? getStrand().hashCode() : 0);
+        result = 31 * result + (getWindowStart() != null ? getWindowStart().hashCode() : 0);
+        result = 31 * result + (getWindowEnd() != null ? getWindowEnd().hashCode() : 0);
+        return result;
     }
 }

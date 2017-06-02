@@ -24,5 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class GenotypingResultsHaploid extends StructureDefinition {
+import java.io.Serializable;
+
+public class GenotypingResultsHaploid extends StructureDefinition implements Serializable {
 }

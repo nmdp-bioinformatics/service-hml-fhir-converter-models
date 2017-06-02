@@ -24,9 +24,12 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import java.util.Arrays;
 import java.util.Date;
 
-public class Patient {
+import java.io.Serializable;
+
+public class Patient implements Serializable {
     private Identifier identifier;
     private Boolean active;
     private String name;
@@ -143,5 +146,54 @@ public class Patient {
 
     public void setManagingOrganization(Organization managingOrganization) {
         this.managingOrganization = managingOrganization;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Patient)) return false;
+
+        Patient patient = (Patient) o;
+
+        if (getIdentifier() != null ? !getIdentifier().equals(patient.getIdentifier()) : patient.getIdentifier() != null)
+            return false;
+        if (getActive() != null ? !getActive().equals(patient.getActive()) : patient.getActive() != null) return false;
+        if (getName() != null ? !getName().equals(patient.getName()) : patient.getName() != null) return false;
+        if (getTelecom() != null ? !getTelecom().equals(patient.getTelecom()) : patient.getTelecom() != null)
+            return false;
+        if (getGender() != null ? !getGender().equals(patient.getGender()) : patient.getGender() != null) return false;
+        if (getBirthDate() != null ? !getBirthDate().equals(patient.getBirthDate()) : patient.getBirthDate() != null)
+            return false;
+        if (getDeceased() != null ? !getDeceased().equals(patient.getDeceased()) : patient.getDeceased() != null)
+            return false;
+        if (getAddress() != null ? !getAddress().equals(patient.getAddress()) : patient.getAddress() != null)
+            return false;
+        if (getMaritalStatus() != null ? !getMaritalStatus().equals(patient.getMaritalStatus()) : patient.getMaritalStatus() != null)
+            return false;
+        if (getMultipleBirth() != null ? !getMultipleBirth().equals(patient.getMultipleBirth()) : patient.getMultipleBirth() != null)
+            return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(getPhoto(), patient.getPhoto())) return false;
+        if (getGeneralPractitioner() != null ? !getGeneralPractitioner().equals(patient.getGeneralPractitioner()) : patient.getGeneralPractitioner() != null)
+            return false;
+        return getManagingOrganization() != null ? getManagingOrganization().equals(patient.getManagingOrganization()) : patient.getManagingOrganization() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getIdentifier() != null ? getIdentifier().hashCode() : 0;
+        result = 31 * result + (getActive() != null ? getActive().hashCode() : 0);
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getTelecom() != null ? getTelecom().hashCode() : 0);
+        result = 31 * result + (getGender() != null ? getGender().hashCode() : 0);
+        result = 31 * result + (getBirthDate() != null ? getBirthDate().hashCode() : 0);
+        result = 31 * result + (getDeceased() != null ? getDeceased().hashCode() : 0);
+        result = 31 * result + (getAddress() != null ? getAddress().hashCode() : 0);
+        result = 31 * result + (getMaritalStatus() != null ? getMaritalStatus().hashCode() : 0);
+        result = 31 * result + (getMultipleBirth() != null ? getMultipleBirth().hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(getPhoto());
+        result = 31 * result + (getGeneralPractitioner() != null ? getGeneralPractitioner().hashCode() : 0);
+        result = 31 * result + (getManagingOrganization() != null ? getManagingOrganization().hashCode() : 0);
+        return result;
     }
 }

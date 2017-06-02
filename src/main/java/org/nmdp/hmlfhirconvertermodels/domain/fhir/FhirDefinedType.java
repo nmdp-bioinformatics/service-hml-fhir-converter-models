@@ -24,5 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class FhirDefinedType {
+import java.io.Serializable;
+
+public class FhirDefinedType implements Serializable {
 }

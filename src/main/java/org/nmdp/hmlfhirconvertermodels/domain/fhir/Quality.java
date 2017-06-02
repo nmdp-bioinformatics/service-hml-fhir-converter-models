@@ -26,7 +26,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import java.math.BigDecimal;
 
-public class Quality {
+import java.io.Serializable;
+
+public class Quality implements Serializable {
     private Type code;
     private Sequence standardSequence;
     private Integer start;
@@ -152,5 +154,53 @@ public class Quality {
 
     public void setfScore(BigDecimal fScore) {
         this.fScore = fScore;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Quality)) return false;
+
+        Quality quality = (Quality) o;
+
+        if (getCode() != null ? !getCode().equals(quality.getCode()) : quality.getCode() != null) return false;
+        if (getStandardSequence() != null ? !getStandardSequence().equals(quality.getStandardSequence()) : quality.getStandardSequence() != null)
+            return false;
+        if (getStart() != null ? !getStart().equals(quality.getStart()) : quality.getStart() != null) return false;
+        if (getEnd() != null ? !getEnd().equals(quality.getEnd()) : quality.getEnd() != null) return false;
+        if (getScore() != null ? !getScore().equals(quality.getScore()) : quality.getScore() != null) return false;
+        if (getMethod() != null ? !getMethod().equals(quality.getMethod()) : quality.getMethod() != null) return false;
+        if (getTruthTP() != null ? !getTruthTP().equals(quality.getTruthTP()) : quality.getTruthTP() != null)
+            return false;
+        if (getQueryTP() != null ? !getQueryTP().equals(quality.getQueryTP()) : quality.getQueryTP() != null)
+            return false;
+        if (getTruthFN() != null ? !getTruthFN().equals(quality.getTruthFN()) : quality.getTruthFN() != null)
+            return false;
+        if (getQueryFP() != null ? !getQueryFP().equals(quality.getQueryFP()) : quality.getQueryFP() != null)
+            return false;
+        if (getGtFP() != null ? !getGtFP().equals(quality.getGtFP()) : quality.getGtFP() != null) return false;
+        if (getPrecision() != null ? !getPrecision().equals(quality.getPrecision()) : quality.getPrecision() != null)
+            return false;
+        if (getRecall() != null ? !getRecall().equals(quality.getRecall()) : quality.getRecall() != null) return false;
+        return getfScore() != null ? getfScore().equals(quality.getfScore()) : quality.getfScore() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getCode() != null ? getCode().hashCode() : 0;
+        result = 31 * result + (getStandardSequence() != null ? getStandardSequence().hashCode() : 0);
+        result = 31 * result + (getStart() != null ? getStart().hashCode() : 0);
+        result = 31 * result + (getEnd() != null ? getEnd().hashCode() : 0);
+        result = 31 * result + (getScore() != null ? getScore().hashCode() : 0);
+        result = 31 * result + (getMethod() != null ? getMethod().hashCode() : 0);
+        result = 31 * result + (getTruthTP() != null ? getTruthTP().hashCode() : 0);
+        result = 31 * result + (getQueryTP() != null ? getQueryTP().hashCode() : 0);
+        result = 31 * result + (getTruthFN() != null ? getTruthFN().hashCode() : 0);
+        result = 31 * result + (getQueryFP() != null ? getQueryFP().hashCode() : 0);
+        result = 31 * result + (getGtFP() != null ? getGtFP().hashCode() : 0);
+        result = 31 * result + (getPrecision() != null ? getPrecision().hashCode() : 0);
+        result = 31 * result + (getRecall() != null ? getRecall().hashCode() : 0);
+        result = 31 * result + (getfScore() != null ? getfScore().hashCode() : 0);
+        return result;
     }
 }

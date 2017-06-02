@@ -26,7 +26,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.joda.time.DateTime;
 
-public class Observation {
+import java.io.Serializable;
+
+public class Observation implements Serializable {
 
     private Identifier identifier;
     private Reference basedOn;
@@ -45,6 +47,7 @@ public class Observation {
     private Object bodySite;
     private Object method;
     private Specimen specimen;
+    private Device device;
 
     public Identifier getIdentifier() {
         return identifier;
@@ -190,5 +193,61 @@ public class Observation {
         this.device = device;
     }
 
-    private Device device;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Observation)) return false;
+
+        Observation that = (Observation) o;
+
+        if (getIdentifier() != null ? !getIdentifier().equals(that.getIdentifier()) : that.getIdentifier() != null)
+            return false;
+        if (getBasedOn() != null ? !getBasedOn().equals(that.getBasedOn()) : that.getBasedOn() != null) return false;
+        if (getStatus() != that.getStatus()) return false;
+        if (getCategory() != null ? !getCategory().equals(that.getCategory()) : that.getCategory() != null)
+            return false;
+        if (getCode() != null ? !getCode().equals(that.getCode()) : that.getCode() != null) return false;
+        if (getSubject() != null ? !getSubject().equals(that.getSubject()) : that.getSubject() != null) return false;
+        if (getContext() != null ? !getContext().equals(that.getContext()) : that.getContext() != null) return false;
+        if (getEffective() != null ? !getEffective().equals(that.getEffective()) : that.getEffective() != null)
+            return false;
+        if (getIssued() != null ? !getIssued().equals(that.getIssued()) : that.getIssued() != null) return false;
+        if (getPerformer() != null ? !getPerformer().equals(that.getPerformer()) : that.getPerformer() != null)
+            return false;
+        if (getValue() != null ? !getValue().equals(that.getValue()) : that.getValue() != null) return false;
+        if (getDataAbsentReason() != null ? !getDataAbsentReason().equals(that.getDataAbsentReason()) : that.getDataAbsentReason() != null)
+            return false;
+        if (getInterpretation() != null ? !getInterpretation().equals(that.getInterpretation()) : that.getInterpretation() != null)
+            return false;
+        if (getComment() != null ? !getComment().equals(that.getComment()) : that.getComment() != null) return false;
+        if (getBodySite() != null ? !getBodySite().equals(that.getBodySite()) : that.getBodySite() != null)
+            return false;
+        if (getMethod() != null ? !getMethod().equals(that.getMethod()) : that.getMethod() != null) return false;
+        if (getSpecimen() != null ? !getSpecimen().equals(that.getSpecimen()) : that.getSpecimen() != null)
+            return false;
+        return getDevice() != null ? getDevice().equals(that.getDevice()) : that.getDevice() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getIdentifier() != null ? getIdentifier().hashCode() : 0;
+        result = 31 * result + (getBasedOn() != null ? getBasedOn().hashCode() : 0);
+        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        result = 31 * result + (getCategory() != null ? getCategory().hashCode() : 0);
+        result = 31 * result + (getCode() != null ? getCode().hashCode() : 0);
+        result = 31 * result + (getSubject() != null ? getSubject().hashCode() : 0);
+        result = 31 * result + (getContext() != null ? getContext().hashCode() : 0);
+        result = 31 * result + (getEffective() != null ? getEffective().hashCode() : 0);
+        result = 31 * result + (getIssued() != null ? getIssued().hashCode() : 0);
+        result = 31 * result + (getPerformer() != null ? getPerformer().hashCode() : 0);
+        result = 31 * result + (getValue() != null ? getValue().hashCode() : 0);
+        result = 31 * result + (getDataAbsentReason() != null ? getDataAbsentReason().hashCode() : 0);
+        result = 31 * result + (getInterpretation() != null ? getInterpretation().hashCode() : 0);
+        result = 31 * result + (getComment() != null ? getComment().hashCode() : 0);
+        result = 31 * result + (getBodySite() != null ? getBodySite().hashCode() : 0);
+        result = 31 * result + (getMethod() != null ? getMethod().hashCode() : 0);
+        result = 31 * result + (getSpecimen() != null ? getSpecimen().hashCode() : 0);
+        result = 31 * result + (getDevice() != null ? getDevice().hashCode() : 0);
+        return result;
+    }
 }

@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 /**
  * Sample
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-05-31T16:18:13.752-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-06-01T16:31:18.928-05:00")
 
 public class Sample  implements Serializable {
   @JsonProperty("active")

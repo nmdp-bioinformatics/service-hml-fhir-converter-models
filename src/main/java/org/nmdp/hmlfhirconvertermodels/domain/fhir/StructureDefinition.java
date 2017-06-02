@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 import org.joda.time.DateTime;
 
 import java.net.URL;
+import java.io.Serializable;
 
-public class StructureDefinition {
+public class StructureDefinition implements Serializable {
 
     private URL url;
     private String identifier;
@@ -254,5 +255,81 @@ public class StructureDefinition {
 
     public void setDerivation(TypeDerivationRule derivation) {
         this.derivation = derivation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof StructureDefinition)) return false;
+
+        StructureDefinition that = (StructureDefinition) o;
+
+        if (getUrl() != null ? !getUrl().equals(that.getUrl()) : that.getUrl() != null) return false;
+        if (getIdentifier() != null ? !getIdentifier().equals(that.getIdentifier()) : that.getIdentifier() != null)
+            return false;
+        if (getVersion() != null ? !getVersion().equals(that.getVersion()) : that.getVersion() != null) return false;
+        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
+        if (getTitle() != null ? !getTitle().equals(that.getTitle()) : that.getTitle() != null) return false;
+        if (getStatus() != that.getStatus()) return false;
+        if (getExperimental() != null ? !getExperimental().equals(that.getExperimental()) : that.getExperimental() != null)
+            return false;
+        if (getDate() != null ? !getDate().equals(that.getDate()) : that.getDate() != null) return false;
+        if (getPublisher() != null ? !getPublisher().equals(that.getPublisher()) : that.getPublisher() != null)
+            return false;
+        if (getContact() != null ? !getContact().equals(that.getContact()) : that.getContact() != null) return false;
+        if (getDescription() != null ? !getDescription().equals(that.getDescription()) : that.getDescription() != null)
+            return false;
+        if (getUseContext() != null ? !getUseContext().equals(that.getUseContext()) : that.getUseContext() != null)
+            return false;
+        if (getJurisdiction() != null ? !getJurisdiction().equals(that.getJurisdiction()) : that.getJurisdiction() != null)
+            return false;
+        if (getPurpose() != null ? !getPurpose().equals(that.getPurpose()) : that.getPurpose() != null) return false;
+        if (getCopyright() != null ? !getCopyright().equals(that.getCopyright()) : that.getCopyright() != null)
+            return false;
+        if (getKeyword() != null ? !getKeyword().equals(that.getKeyword()) : that.getKeyword() != null) return false;
+        if (getFhirVersion() != null ? !getFhirVersion().equals(that.getFhirVersion()) : that.getFhirVersion() != null)
+            return false;
+        if (getKind() != null ? !getKind().equals(that.getKind()) : that.getKind() != null) return false;
+        if (getAbstracted() != null ? !getAbstracted().equals(that.getAbstracted()) : that.getAbstracted() != null)
+            return false;
+        if (getContextType() != null ? !getContextType().equals(that.getContextType()) : that.getContextType() != null)
+            return false;
+        if (getContext() != null ? !getContext().equals(that.getContext()) : that.getContext() != null) return false;
+        if (getContextVariant() != null ? !getContextVariant().equals(that.getContextVariant()) : that.getContextVariant() != null)
+            return false;
+        if (getType() != null ? !getType().equals(that.getType()) : that.getType() != null) return false;
+        if (getBaseDefinition() != null ? !getBaseDefinition().equals(that.getBaseDefinition()) : that.getBaseDefinition() != null)
+            return false;
+        return getDerivation() != null ? getDerivation().equals(that.getDerivation()) : that.getDerivation() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getUrl() != null ? getUrl().hashCode() : 0;
+        result = 31 * result + (getIdentifier() != null ? getIdentifier().hashCode() : 0);
+        result = 31 * result + (getVersion() != null ? getVersion().hashCode() : 0);
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getTitle() != null ? getTitle().hashCode() : 0);
+        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        result = 31 * result + (getExperimental() != null ? getExperimental().hashCode() : 0);
+        result = 31 * result + (getDate() != null ? getDate().hashCode() : 0);
+        result = 31 * result + (getPublisher() != null ? getPublisher().hashCode() : 0);
+        result = 31 * result + (getContact() != null ? getContact().hashCode() : 0);
+        result = 31 * result + (getDescription() != null ? getDescription().hashCode() : 0);
+        result = 31 * result + (getUseContext() != null ? getUseContext().hashCode() : 0);
+        result = 31 * result + (getJurisdiction() != null ? getJurisdiction().hashCode() : 0);
+        result = 31 * result + (getPurpose() != null ? getPurpose().hashCode() : 0);
+        result = 31 * result + (getCopyright() != null ? getCopyright().hashCode() : 0);
+        result = 31 * result + (getKeyword() != null ? getKeyword().hashCode() : 0);
+        result = 31 * result + (getFhirVersion() != null ? getFhirVersion().hashCode() : 0);
+        result = 31 * result + (getKind() != null ? getKind().hashCode() : 0);
+        result = 31 * result + (getAbstracted() != null ? getAbstracted().hashCode() : 0);
+        result = 31 * result + (getContextType() != null ? getContextType().hashCode() : 0);
+        result = 31 * result + (getContext() != null ? getContext().hashCode() : 0);
+        result = 31 * result + (getContextVariant() != null ? getContextVariant().hashCode() : 0);
+        result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        result = 31 * result + (getBaseDefinition() != null ? getBaseDefinition().hashCode() : 0);
+        result = 31 * result + (getDerivation() != null ? getDerivation().hashCode() : 0);
+        return result;
     }
 }

@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Haploid;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Haploids {
+public class Haploids implements Serializable {
     private List<Haploid> haploids;
 
     public List<Haploid> getHaploids() {

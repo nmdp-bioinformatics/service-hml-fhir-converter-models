@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Glstring;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Glstrings {
+public class Glstrings implements Serializable {
     private List<Glstring> glstrings;
 
     public List<Glstring> getGlstrings() {

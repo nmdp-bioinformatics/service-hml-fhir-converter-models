@@ -24,5 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class UsageContext {
+import java.io.Serializable;
+
+public class UsageContext implements Serializable {
+
 }

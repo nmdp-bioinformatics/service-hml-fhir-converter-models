@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Observation;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Observations {
+public class Observations implements Serializable {
     private List<Observation> observations;
 
     public List<Observation> getObservations() {

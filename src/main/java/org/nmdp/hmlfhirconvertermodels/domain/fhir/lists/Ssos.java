@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Sso;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Ssos {
+public class Ssos implements Serializable {
     private List<Sso> ssos;
 
     public List<Sso> getSsos() {

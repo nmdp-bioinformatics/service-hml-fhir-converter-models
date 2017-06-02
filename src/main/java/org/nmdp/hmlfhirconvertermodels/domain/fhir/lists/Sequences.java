@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Sequence;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Sequences {
+public class Sequences implements Serializable {
     private List<Sequence> sequences;
 
     public List<Sequence> getSequences() {

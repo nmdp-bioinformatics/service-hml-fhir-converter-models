@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class AlleleName extends StructureDefinition {
+import java.io.Serializable;
+
+public class AlleleName extends StructureDefinition implements Serializable {
     private String allele;
 
     public String getAllele() {
@@ -33,5 +35,23 @@ public class AlleleName extends StructureDefinition {
 
     public void setAllele(String allele) {
         this.allele = allele;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AlleleName)) return false;
+        if (!super.equals(o)) return false;
+
+        AlleleName that = (AlleleName) o;
+
+        return getAllele() != null ? getAllele().equals(that.getAllele()) : that.getAllele() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getAllele() != null ? getAllele().hashCode() : 0);
+        return result;
     }
 }

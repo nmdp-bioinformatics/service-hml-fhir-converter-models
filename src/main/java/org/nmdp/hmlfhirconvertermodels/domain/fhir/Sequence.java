@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Sequence {
+import java.io.Serializable;
+
+public class Sequence implements Serializable {
     private Identifier identifier;
     private Code type;
     private Integer coordinateSystem;
@@ -159,5 +161,62 @@ public class Sequence {
 
     public void setPointer(Sequence pointer) {
         this.pointer = pointer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sequence)) return false;
+
+        Sequence sequence = (Sequence) o;
+
+        if (getIdentifier() != null ? !getIdentifier().equals(sequence.getIdentifier()) : sequence.getIdentifier() != null)
+            return false;
+        if (getType() != null ? !getType().equals(sequence.getType()) : sequence.getType() != null) return false;
+        if (getCoordinateSystem() != null ? !getCoordinateSystem().equals(sequence.getCoordinateSystem()) : sequence.getCoordinateSystem() != null)
+            return false;
+        if (getPatient() != null ? !getPatient().equals(sequence.getPatient()) : sequence.getPatient() != null)
+            return false;
+        if (getSpecimen() != null ? !getSpecimen().equals(sequence.getSpecimen()) : sequence.getSpecimen() != null)
+            return false;
+        if (getDevice() != null ? !getDevice().equals(sequence.getDevice()) : sequence.getDevice() != null)
+            return false;
+        if (getPerformer() != null ? !getPerformer().equals(sequence.getPerformer()) : sequence.getPerformer() != null)
+            return false;
+        if (getQuantity() != null ? !getQuantity().equals(sequence.getQuantity()) : sequence.getQuantity() != null)
+            return false;
+        if (getReferenceSeq() != null ? !getReferenceSeq().equals(sequence.getReferenceSeq()) : sequence.getReferenceSeq() != null)
+            return false;
+        if (getVariant() != null ? !getVariant().equals(sequence.getVariant()) : sequence.getVariant() != null)
+            return false;
+        if (getObservedSeq() != null ? !getObservedSeq().equals(sequence.getObservedSeq()) : sequence.getObservedSeq() != null)
+            return false;
+        if (getQuality() != null ? !getQuality().equals(sequence.getQuality()) : sequence.getQuality() != null)
+            return false;
+        if (getReadCoverage() != null ? !getReadCoverage().equals(sequence.getReadCoverage()) : sequence.getReadCoverage() != null)
+            return false;
+        if (getRepository() != null ? !getRepository().equals(sequence.getRepository()) : sequence.getRepository() != null)
+            return false;
+        return getPointer() != null ? getPointer().equals(sequence.getPointer()) : sequence.getPointer() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getIdentifier() != null ? getIdentifier().hashCode() : 0;
+        result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        result = 31 * result + (getCoordinateSystem() != null ? getCoordinateSystem().hashCode() : 0);
+        result = 31 * result + (getPatient() != null ? getPatient().hashCode() : 0);
+        result = 31 * result + (getSpecimen() != null ? getSpecimen().hashCode() : 0);
+        result = 31 * result + (getDevice() != null ? getDevice().hashCode() : 0);
+        result = 31 * result + (getPerformer() != null ? getPerformer().hashCode() : 0);
+        result = 31 * result + (getQuantity() != null ? getQuantity().hashCode() : 0);
+        result = 31 * result + (getReferenceSeq() != null ? getReferenceSeq().hashCode() : 0);
+        result = 31 * result + (getVariant() != null ? getVariant().hashCode() : 0);
+        result = 31 * result + (getObservedSeq() != null ? getObservedSeq().hashCode() : 0);
+        result = 31 * result + (getQuality() != null ? getQuality().hashCode() : 0);
+        result = 31 * result + (getReadCoverage() != null ? getReadCoverage().hashCode() : 0);
+        result = 31 * result + (getRepository() != null ? getRepository().hashCode() : 0);
+        result = 31 * result + (getPointer() != null ? getPointer().hashCode() : 0);
+        return result;
     }
 }

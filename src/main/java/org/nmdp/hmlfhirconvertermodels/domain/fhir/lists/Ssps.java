@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.Ssp;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class Ssps {
+public class Ssps implements Serializable {
     private List<Ssp> ssps;
 
     public List<Ssp> getSsps() {

@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Glstring extends StructureDefinition {
+import java.io.Serializable;
+
+public class Glstring extends StructureDefinition implements Serializable {
     private String uri;
     private String value;
 
@@ -42,5 +44,25 @@ public class Glstring extends StructureDefinition {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Glstring)) return false;
+        if (!super.equals(o)) return false;
+
+        Glstring glstring = (Glstring) o;
+
+        if (getUri() != null ? !getUri().equals(glstring.getUri()) : glstring.getUri() != null) return false;
+        return getValue() != null ? getValue().equals(glstring.getValue()) : glstring.getValue() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getUri() != null ? getUri().hashCode() : 0);
+        result = 31 * result + (getValue() != null ? getValue().hashCode() : 0);
+        return result;
     }
 }

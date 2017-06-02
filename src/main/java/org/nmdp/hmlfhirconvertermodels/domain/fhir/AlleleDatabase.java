@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class AlleleDatabase extends StructureDefinition {
+import java.io.Serializable;
+
+public class AlleleDatabase extends StructureDefinition implements Serializable {
 
 }

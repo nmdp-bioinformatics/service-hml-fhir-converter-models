@@ -24,7 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-public class Variant {
+import java.io.Serializable;
+
+public class Variant implements Serializable {
     private Integer start;
     private Integer end;
     private String observedAllele;
@@ -78,5 +80,33 @@ public class Variant {
 
     public void setVariantPointer(Observation variantPointer) {
         this.variantPointer = variantPointer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Variant)) return false;
+
+        Variant variant = (Variant) o;
+
+        if (getStart() != null ? !getStart().equals(variant.getStart()) : variant.getStart() != null) return false;
+        if (getEnd() != null ? !getEnd().equals(variant.getEnd()) : variant.getEnd() != null) return false;
+        if (getObservedAllele() != null ? !getObservedAllele().equals(variant.getObservedAllele()) : variant.getObservedAllele() != null)
+            return false;
+        if (getReferenceAllele() != null ? !getReferenceAllele().equals(variant.getReferenceAllele()) : variant.getReferenceAllele() != null)
+            return false;
+        if (getCigar() != null ? !getCigar().equals(variant.getCigar()) : variant.getCigar() != null) return false;
+        return getVariantPointer() != null ? getVariantPointer().equals(variant.getVariantPointer()) : variant.getVariantPointer() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getStart() != null ? getStart().hashCode() : 0;
+        result = 31 * result + (getEnd() != null ? getEnd().hashCode() : 0);
+        result = 31 * result + (getObservedAllele() != null ? getObservedAllele().hashCode() : 0);
+        result = 31 * result + (getReferenceAllele() != null ? getReferenceAllele().hashCode() : 0);
+        result = 31 * result + (getCigar() != null ? getCigar().hashCode() : 0);
+        result = 31 * result + (getVariantPointer() != null ? getVariantPointer().hashCode() : 0);
+        return result;
     }
 }

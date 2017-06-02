@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.GeneticsPhaseSet;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class GeneticsPhaseSets {
+public class GeneticsPhaseSets implements Serializable {
     private List<GeneticsPhaseSet> geneticsPhaseSets;
 
     public List<GeneticsPhaseSet> getGeneticsPhaseSets() {

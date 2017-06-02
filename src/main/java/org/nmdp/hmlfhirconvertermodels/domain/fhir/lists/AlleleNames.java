@@ -27,8 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.AlleleName;
 
 import java.util.List;
+import java.io.Serializable;
 
-public class AlleleNames {
+public class AlleleNames implements Serializable {
     private List<AlleleName> alleleNames;
 
     public List<AlleleName> getAlleleNames() {

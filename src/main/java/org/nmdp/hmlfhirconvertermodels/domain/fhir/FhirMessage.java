@@ -26,7 +26,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.*;
 
-public class FhirMessage {
+import java.io.Serializable;
+
+public class FhirMessage implements Serializable {
     private AlleleDatabases alleleDatabases;
     private AlleleNames alleleNames;
     private DiagnosticReport diagnosticReport;
@@ -170,5 +172,63 @@ public class FhirMessage {
 
     public void setSsps(Ssps ssps) {
         this.ssps = ssps;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FhirMessage)) return false;
+
+        FhirMessage that = (FhirMessage) o;
+
+        if (getAlleleDatabases() != null ? !getAlleleDatabases().equals(that.getAlleleDatabases()) : that.getAlleleDatabases() != null)
+            return false;
+        if (getAlleleNames() != null ? !getAlleleNames().equals(that.getAlleleNames()) : that.getAlleleNames() != null)
+            return false;
+        if (getDiagnosticReport() != null ? !getDiagnosticReport().equals(that.getDiagnosticReport()) : that.getDiagnosticReport() != null)
+            return false;
+        if (getGeneticsPhaseSets() != null ? !getGeneticsPhaseSets().equals(that.getGeneticsPhaseSets()) : that.getGeneticsPhaseSets() != null)
+            return false;
+        if (getGenotypingResultsHaploids() != null ? !getGenotypingResultsHaploids().equals(that.getGenotypingResultsHaploids()) : that.getGenotypingResultsHaploids() != null)
+            return false;
+        if (getGenotypingResultsMethods() != null ? !getGenotypingResultsMethods().equals(that.getGenotypingResultsMethods()) : that.getGenotypingResultsMethods() != null)
+            return false;
+        if (getGlstrings() != null ? !getGlstrings().equals(that.getGlstrings()) : that.getGlstrings() != null)
+            return false;
+        if (getHaploids() != null ? !getHaploids().equals(that.getHaploids()) : that.getHaploids() != null)
+            return false;
+        if (getObservations() != null ? !getObservations().equals(that.getObservations()) : that.getObservations() != null)
+            return false;
+        if (getOrganization() != null ? !getOrganization().equals(that.getOrganization()) : that.getOrganization() != null)
+            return false;
+        if (getPatient() != null ? !getPatient().equals(that.getPatient()) : that.getPatient() != null) return false;
+        if (getSbtNgss() != null ? !getSbtNgss().equals(that.getSbtNgss()) : that.getSbtNgss() != null) return false;
+        if (getSequences() != null ? !getSequences().equals(that.getSequences()) : that.getSequences() != null)
+            return false;
+        if (getSpecimens() != null ? !getSpecimens().equals(that.getSpecimens()) : that.getSpecimens() != null)
+            return false;
+        if (getSsos() != null ? !getSsos().equals(that.getSsos()) : that.getSsos() != null) return false;
+        return getSsps() != null ? getSsps().equals(that.getSsps()) : that.getSsps() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getAlleleDatabases() != null ? getAlleleDatabases().hashCode() : 0;
+        result = 31 * result + (getAlleleNames() != null ? getAlleleNames().hashCode() : 0);
+        result = 31 * result + (getDiagnosticReport() != null ? getDiagnosticReport().hashCode() : 0);
+        result = 31 * result + (getGeneticsPhaseSets() != null ? getGeneticsPhaseSets().hashCode() : 0);
+        result = 31 * result + (getGenotypingResultsHaploids() != null ? getGenotypingResultsHaploids().hashCode() : 0);
+        result = 31 * result + (getGenotypingResultsMethods() != null ? getGenotypingResultsMethods().hashCode() : 0);
+        result = 31 * result + (getGlstrings() != null ? getGlstrings().hashCode() : 0);
+        result = 31 * result + (getHaploids() != null ? getHaploids().hashCode() : 0);
+        result = 31 * result + (getObservations() != null ? getObservations().hashCode() : 0);
+        result = 31 * result + (getOrganization() != null ? getOrganization().hashCode() : 0);
+        result = 31 * result + (getPatient() != null ? getPatient().hashCode() : 0);
+        result = 31 * result + (getSbtNgss() != null ? getSbtNgss().hashCode() : 0);
+        result = 31 * result + (getSequences() != null ? getSequences().hashCode() : 0);
+        result = 31 * result + (getSpecimens() != null ? getSpecimens().hashCode() : 0);
+        result = 31 * result + (getSsos() != null ? getSsos().hashCode() : 0);
+        result = 31 * result + (getSsps() != null ? getSsps().hashCode() : 0);
+        return result;
     }
 }
