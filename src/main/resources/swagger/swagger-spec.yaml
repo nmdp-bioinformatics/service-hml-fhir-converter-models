@@ -918,7 +918,9 @@ definitions:
         $ref: SbtSanger
         description: method sanger sbt
       sbtNgs:
-        $ref: SbtNgs
+        type: array
+        items:
+          $ref: '#/definitions/SbtNgs'
       sso:
         $ref: Sso
         description: method sso
