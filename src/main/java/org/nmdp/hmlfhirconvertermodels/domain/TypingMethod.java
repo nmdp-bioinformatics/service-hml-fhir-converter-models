@@ -23,6 +23,7 @@ package org.nmdp.hmlfhirconvertermodels.domain;
  * > http://www.fsf.org/licensing/licenses/lgpl.html
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
+
 import org.nmdp.hmlfhirconvertermodels.domain.base.SwaggerConverter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -33,6 +34,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -69,7 +71,7 @@ public class TypingMethod extends SwaggerConverter<TypingMethod, org.nmdp.hmlfhi
     private SbtSanger sbtSanger;
 
     @XmlAttribute
-    private SbtNgs sbtNgs;
+    private List<SbtNgs> sbtNgs;
 
     @XmlAttribute
     private Boolean active;
