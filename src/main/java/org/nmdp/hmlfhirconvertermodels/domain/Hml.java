@@ -94,4 +94,12 @@ public class Hml extends SwaggerConverter<Hml, org.nmdp.hmlfhirconvertermodels.d
 
     @XmlAttribute
     private Date dateUpdated;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

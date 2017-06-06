@@ -1,7 +1,7 @@
-package org.nmdp.hmlfhirconvertermodels.domain.fhir;
+package org.nmdp.hmlfhirconvertermodels.lists;
 
 /**
- * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 5/26/17.
+ * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 6/6/17.
  * <p>
  * service-hml-fhir-converter-models
  * Copyright (c) 2012-2017 National Marrow Donor Program (NMDP)
@@ -24,34 +24,18 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import java.io.Serializable;
+import org.nmdp.hmlfhirconvertermodels.dto.Haploid;
 
-public class FhirDefinedType implements Serializable {
-    private String locus;
-    private String fhirType;
-    private String method;
+import java.util.List;
 
-    public String getLocus() {
-        return locus;
+public class Haploids {
+    private List<Haploid> haploids;
+
+    public List<Haploid> getHaploids() {
+        return haploids;
     }
 
-    public void setLocus(String locus) {
-        this.locus = locus;
-    }
-
-    public String getFhirType() {
-        return fhirType;
-    }
-
-    public void setFhirType(String fhirType) {
-        this.fhirType = fhirType;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
+    public void setHaploids(List<Haploid> haploids) {
+        this.haploids = haploids;
     }
 }
