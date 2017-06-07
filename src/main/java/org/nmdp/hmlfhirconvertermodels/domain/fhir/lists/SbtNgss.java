@@ -39,4 +39,12 @@ public class SbtNgss implements Serializable {
     public void setSbtNgss(List<SbtNgs> sbtNgss) {
         this.sbtNgss = sbtNgss;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getSbtNgss() != null && getSbtNgss().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

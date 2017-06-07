@@ -39,4 +39,12 @@ public class GeneticsPhaseSets implements Serializable {
     public void setGeneticsPhaseSets(List<GeneticsPhaseSet> geneticsPhaseSets) {
         this.geneticsPhaseSets = geneticsPhaseSets;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getGeneticsPhaseSets() != null && getGeneticsPhaseSets().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

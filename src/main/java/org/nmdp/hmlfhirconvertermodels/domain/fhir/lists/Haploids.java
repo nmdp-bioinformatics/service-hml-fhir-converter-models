@@ -39,4 +39,12 @@ public class Haploids implements Serializable {
     public void setHaploids(List<Haploid> haploids) {
         this.haploids = haploids;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getHaploids() != null && getHaploids().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

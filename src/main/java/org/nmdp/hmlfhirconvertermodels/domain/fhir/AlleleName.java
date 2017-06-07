@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class AlleleName extends StructureDefinition implements Serializable {
@@ -53,5 +55,14 @@ public class AlleleName extends StructureDefinition implements Serializable {
         int result = super.hashCode();
         result = 31 * result + (getAllele() != null ? getAllele().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getAllele())) { hasValue = true; }
+        if (super.hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

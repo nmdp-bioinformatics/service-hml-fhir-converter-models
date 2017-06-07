@@ -39,4 +39,12 @@ public class GenotypingResultsHaploids implements Serializable {
     public void setGenotypingResultsHaploids(List<GenotypingResultsHaploid> genotypingResultsHaploids) {
         this.genotypingResultsHaploids = genotypingResultsHaploids;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getGenotypingResultsHaploids() != null && getGenotypingResultsHaploids().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

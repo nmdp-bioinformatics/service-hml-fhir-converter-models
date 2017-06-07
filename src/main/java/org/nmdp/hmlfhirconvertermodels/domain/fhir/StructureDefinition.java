@@ -24,6 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
 import java.net.URL;
@@ -331,5 +332,38 @@ public class StructureDefinition implements Serializable {
         result = 31 * result + (getBaseDefinition() != null ? getBaseDefinition().hashCode() : 0);
         result = 31 * result + (getDerivation() != null ? getDerivation().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getUrl() != null) { hasValue = true; }
+        if (getIdentifier() != null) { hasValue = true; }
+        if (!StringUtils.isBlank(getVersion())) { hasValue = true; }
+        if (!StringUtils.isBlank(getName())) { hasValue = true; }
+        if (!StringUtils.isBlank(getTitle())) { hasValue = true; }
+        if (getStatus() != null) { hasValue = true; }
+        if (getExperimental() != null) { hasValue = true; }
+        if (getDate() != null) { hasValue = true; }
+        if (!StringUtils.isBlank(getPublisher())) { hasValue = true; }
+        if (getContact() != null && getContact().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getDescription())) { hasValue = true; }
+        if (getUseContext() != null && getUseContext().hasValue()) { hasValue = true; }
+        if (getJurisdiction() != null && getJurisdiction().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getPurpose())) { hasValue = true; }
+        if (!StringUtils.isBlank(getCopyright())) { hasValue = true; }
+        if (!StringUtils.isBlank(getKeyword())) { hasValue = true; }
+        if (!StringUtils.isBlank(getFhirVersion())) { hasValue = true; }
+        if (getKind() != null && getKind().hasValue()) { hasValue = true; }
+        if (getAbstracted() != null) { hasValue = true; }
+        if (getContextType() != null && getContextType().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getContext())) { hasValue = true; }
+        if (!StringUtils.isBlank(getContextVariant())) { hasValue = true; }
+        if (!StringUtils.isBlank(getContextVariant())) { hasValue = true; }
+        if (getType() != null && getType().hasValue()) { hasValue = true; }
+        if (getBaseDefinition() != null) { hasValue = true; }
+        if (getDerivation() != null && getDerivation().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

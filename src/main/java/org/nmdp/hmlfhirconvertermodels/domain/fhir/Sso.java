@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Sso extends Observation implements Serializable {
@@ -50,5 +52,14 @@ public class Sso extends Observation implements Serializable {
     @Override
     public int hashCode() {
         return getLocus() != null ? getLocus().hashCode() : 0;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
+        if (super.hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

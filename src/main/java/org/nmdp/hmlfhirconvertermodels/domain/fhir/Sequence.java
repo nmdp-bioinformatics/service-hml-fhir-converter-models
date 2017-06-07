@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Sequence implements Serializable {
@@ -218,5 +220,27 @@ public class Sequence implements Serializable {
         result = 31 * result + (getRepository() != null ? getRepository().hashCode() : 0);
         result = 31 * result + (getPointer() != null ? getPointer().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+        if (getType() != null && getType().hasValue()) { hasValue = true; }
+        if (getCoordinateSystem() != null) { hasValue = true; }
+        if (getPatient() != null && getPatient().hasValue()) { hasValue = true; }
+        if (getSpecimen() != null && getSpecimen().hasValue()) { hasValue = true; }
+        if (getDevice() != null && getDevice().hasValue()) { hasValue = true; }
+        if (getPerformer() != null && getPerformer().hasValue()) { hasValue = true; }
+        if (getQuantity() != null) { hasValue = true; }
+        if (getReferenceSeq() != null && getReferenceSeq().hasValue()) { hasValue = true; }
+        if (getVariant() != null && getVariant().hasValue()) { hasValue = true; }
+        if (getQuality() != null && getQuality().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getObservedSeq())) { hasValue = true; }
+        if (getReadCoverage() != null) { hasValue = true; }
+        if (getRepository() != null && getRepository().hasValue()) { hasValue = true; }
+        if (getPointer() != null && getPointer().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

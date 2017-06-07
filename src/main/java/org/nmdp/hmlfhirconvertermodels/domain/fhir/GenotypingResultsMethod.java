@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class GenotypingResultsMethod extends StructureDefinition implements Serializable {
@@ -64,5 +66,15 @@ public class GenotypingResultsMethod extends StructureDefinition implements Seri
         result = 31 * result + (getTestId() != null ? getTestId().hashCode() : 0);
         result = 31 * result + (getTestIdSource() != null ? getTestIdSource().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getTestId())) { hasValue = true; }
+        if (!StringUtils.isBlank(getTestIdSource())) { hasValue = true; }
+        if (super.hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

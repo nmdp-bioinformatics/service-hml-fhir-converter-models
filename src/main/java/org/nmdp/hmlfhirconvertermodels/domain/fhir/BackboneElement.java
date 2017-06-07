@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class BackboneElement implements Serializable {
@@ -134,5 +136,20 @@ public class BackboneElement implements Serializable {
         result = 31 * result + (getWindowStart() != null ? getWindowStart().hashCode() : 0);
         result = 31 * result + (getWindowEnd() != null ? getWindowEnd().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getChromosome() != null && getChromosome().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getGenomeBuild())) { hasValue = true; }
+        if (getReferenceSequenceId() != null && getReferenceSequenceId().hasValue()) { hasValue = true; }
+        if (getReferenceSeqPointer() != null && getReferenceSeqPointer().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getReferenceSeqString())) { hasValue = true; }
+        if (getStrand() != null && getStrand() > -10) { hasValue = true; }
+        if (getWindowStart() != null && getWindowStart() > 0) { hasValue = true; }
+        if (getWindowEnd() != null && getWindowEnd() > 0) { hasValue = true; }
+
+        return hasValue;
     }
 }

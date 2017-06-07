@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Haploid extends StructureDefinition implements Serializable {
@@ -75,5 +77,16 @@ public class Haploid extends StructureDefinition implements Serializable {
         result = 31 * result + (getMethod() != null ? getMethod().hashCode() : 0);
         result = 31 * result + (getHaploidType() != null ? getHaploidType().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
+        if (!StringUtils.isBlank(getMethod())) { hasValue = true; }
+        if (!StringUtils.isBlank(getHaploidType())) { hasValue = true; }
+        if (super.hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

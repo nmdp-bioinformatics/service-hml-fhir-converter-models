@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.math.BigDecimal;
 
 import java.io.Serializable;
@@ -202,5 +204,26 @@ public class Quality implements Serializable {
         result = 31 * result + (getRecall() != null ? getRecall().hashCode() : 0);
         result = 31 * result + (getfScore() != null ? getfScore().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getCode() != null && getCode().hasValue()) { hasValue = true; }
+        if (getStandardSequence() != null && getStandardSequence().hasValue()) { hasValue = true; }
+        if (getStart() != null && getStart() > 0) { hasValue = true; }
+        if (getEnd() != null && getEnd() > 0) { hasValue = true; }
+        if (getScore() != null && getScore().hasValue()) { hasValue = true; }
+        if (getMethod() != null && getMethod().hasValue()) { hasValue = true; }
+        if (getTruthFN() != null) { hasValue = true; }
+        if (getQueryTP() != null) { hasValue = true; }
+        if (getTruthTP() != null) { hasValue = true; }
+        if (getQueryFP() != null) { hasValue = true; }
+        if (getGtFP() != null) { hasValue = true; }
+        if (getPrecision() != null) { hasValue = true; }
+        if (getRecall() != null) { hasValue = true; }
+        if (getfScore() != null) { hasValue = true; }
+
+        return hasValue;
     }
 }

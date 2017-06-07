@@ -24,7 +24,15 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class ExtensionContext implements Serializable {
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+
+        return hasValue;
+    }
 }

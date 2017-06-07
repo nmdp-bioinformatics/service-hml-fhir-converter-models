@@ -39,4 +39,12 @@ public class Sequences implements Serializable {
     public void setSequences(List<Sequence> sequences) {
         this.sequences = sequences;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getSequences() != null && getSequences().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

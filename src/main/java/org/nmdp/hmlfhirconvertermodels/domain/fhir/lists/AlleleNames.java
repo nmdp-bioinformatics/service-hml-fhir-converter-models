@@ -39,4 +39,12 @@ public class AlleleNames implements Serializable {
     public void setAlleleNames(List<AlleleName> alleleNames) {
         this.alleleNames = alleleNames;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getAlleleNames() != null && getAlleleNames().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

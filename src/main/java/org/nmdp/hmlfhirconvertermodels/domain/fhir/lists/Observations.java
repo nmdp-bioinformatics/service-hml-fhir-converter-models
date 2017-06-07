@@ -39,4 +39,12 @@ public class Observations implements Serializable {
     public void setObservations(List<Observation> observations) {
         this.observations = observations;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getObservations() != null && getObservations().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

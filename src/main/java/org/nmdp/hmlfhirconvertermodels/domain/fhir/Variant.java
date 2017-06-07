@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Variant implements Serializable {
@@ -108,5 +110,18 @@ public class Variant implements Serializable {
         result = 31 * result + (getCigar() != null ? getCigar().hashCode() : 0);
         result = 31 * result + (getVariantPointer() != null ? getVariantPointer().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getStart() != null && getStart() > 0) { hasValue = true; }
+        if (getEnd() != null && getEnd() > 0) { hasValue = true; }
+        if (!StringUtils.isBlank(getObservedAllele())) { hasValue = true; }
+        if (!StringUtils.isBlank(getReferenceAllele())) { hasValue = true; }
+        if (!StringUtils.isBlank(getCigar())) { hasValue = true; }
+        if (getVariantPointer() != null && getVariantPointer().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

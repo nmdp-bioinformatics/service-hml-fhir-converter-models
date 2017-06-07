@@ -1,5 +1,7 @@
 package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Date;
 
 /**
@@ -148,5 +150,21 @@ public class Specimen implements Serializable {
         result = 31 * result + (getNote() != null ? getNote().hashCode() : 0);
         result = 31 * result + (getType() != null ? getType().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+        if (getCollection() != null && getCollection().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getAccessionIdentifier())) { hasValue = true; }
+        if (getStatus() != null) { hasValue = true; }
+        if (getReceivedTime() != null) { hasValue = true; }
+        if (getParent() != null && getParent().hasValue()) { hasValue = true; }
+        if (getReceivedTime() != null) { hasValue = true; }
+        if (!StringUtils.isBlank(getNote())) { hasValue = true; }
+        if (getType() != null && getType().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

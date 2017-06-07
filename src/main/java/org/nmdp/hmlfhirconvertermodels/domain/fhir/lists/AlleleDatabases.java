@@ -24,6 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.AlleleDatabase;
 
 import java.util.List;
@@ -38,5 +39,13 @@ public class AlleleDatabases implements Serializable {
 
     public void setAlleleDatabases(List<AlleleDatabase> alleleDatabases) {
         this.alleleDatabases = alleleDatabases;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getAlleleDatabases() != null && getAlleleDatabases().size() > 0) { hasValue = true; }
+
+        return hasValue;
     }
 }

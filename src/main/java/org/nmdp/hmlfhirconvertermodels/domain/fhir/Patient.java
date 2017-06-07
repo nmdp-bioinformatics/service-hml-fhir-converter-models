@@ -24,6 +24,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import ch.qos.logback.core.encoder.ByteArrayUtil;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Arrays;
 import java.util.Date;
 
@@ -195,5 +198,22 @@ public class Patient implements Serializable {
         result = 31 * result + (getGeneralPractitioner() != null ? getGeneralPractitioner().hashCode() : 0);
         result = 31 * result + (getManagingOrganization() != null ? getManagingOrganization().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getName())) { hasValue = true; }
+        if (!StringUtils.isBlank(getTelecom())) { hasValue = true; }
+        if (!StringUtils.isBlank(getGender())) { hasValue = true; }
+        if (getBirthDate() != null) { hasValue = true; }
+        if (getAddress() != null && getAddress().hasValue()) { hasValue = true; }
+        if (getMaritalStatus() != null) { hasValue = true; }
+        if (getPhoto() != null && getPhoto().length > 0) { hasValue = true; }
+        if (getGeneralPractitioner() != null && getGeneralPractitioner().hasValue()) { hasValue = true; }
+        if (getManagingOrganization() != null && getManagingOrganization().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

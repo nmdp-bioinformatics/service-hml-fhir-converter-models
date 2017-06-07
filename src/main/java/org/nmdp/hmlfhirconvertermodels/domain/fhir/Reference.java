@@ -27,4 +27,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 import java.io.Serializable;
 
 public class Reference implements Serializable {
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        return hasValue;
+    }
 }

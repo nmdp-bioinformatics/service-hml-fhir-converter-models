@@ -39,4 +39,12 @@ public class Specimens implements Serializable {
     public void setSpecimens(List<Specimen> specimens) {
         this.specimens = specimens;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getSpecimens() != null && getSpecimens().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

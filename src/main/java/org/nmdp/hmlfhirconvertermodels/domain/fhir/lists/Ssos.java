@@ -39,4 +39,12 @@ public class Ssos implements Serializable {
     public void setSsos(List<Sso> ssos) {
         this.ssos = ssos;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getSsos() != null && getSsos().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

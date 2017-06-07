@@ -24,6 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
 import java.io.Serializable;
@@ -249,5 +250,30 @@ public class Observation implements Serializable {
         result = 31 * result + (getSpecimen() != null ? getSpecimen().hashCode() : 0);
         result = 31 * result + (getDevice() != null ? getDevice().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+        if (getBasedOn() != null && getBasedOn().hasValue()) { hasValue = true; }
+        if (getStatus() != null) { hasValue = true; }
+        if (getCategory() != null && getCategory().hasValue()) { hasValue = true; }
+        if (getCode() != null && getCode().hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getSubject())) { hasValue = true; }
+        if (!StringUtils.isBlank(getContext())) { hasValue = true; }
+        if (getEffective() != null) { hasValue = true; }
+        if (getIssued() != null) { hasValue = true; }
+        if (getPerformer() != null && getPerformer().hasValue()) { hasValue = true; }
+        if (getValue() != null) { hasValue = true; }
+        if (getDataAbsentReason() != null) { hasValue = true; }
+        if (getInterpretation() != null) { hasValue = true; }
+        if (!StringUtils.isBlank(getComment())) { hasValue = true; }
+        if (getBodySite() != null) { hasValue = true; }
+        if (getMethod() != null) { hasValue = true; }
+        if (getDevice() != null && getDevice().hasValue()) { hasValue = true; }
+        if (getSpecimen() != null && getSpecimen().hasValue()) { hasValue = true; }
+
+        return hasValue;
     }
 }

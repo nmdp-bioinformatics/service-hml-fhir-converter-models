@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Address implements Serializable {
@@ -120,5 +122,19 @@ public class Address implements Serializable {
         result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
         result = 31 * result + (getCountry() != null ? getCountry().hashCode() : 0);
         return result;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getStreet1())) { hasValue = true; }
+        if (!StringUtils.isBlank(getStreet2())) { hasValue = true; }
+        if (!StringUtils.isBlank(getStreet3())) { hasValue = true; }
+        if (getZip() != null && getZip() > 0) { hasValue = true; }
+        if (!StringUtils.isBlank(getState())) { hasValue = true; }
+        if (!StringUtils.isBlank(getCity())) { hasValue = true; }
+        if (!StringUtils.isBlank(getCountry())) { hasValue = true; }
+
+        return hasValue;
     }
 }

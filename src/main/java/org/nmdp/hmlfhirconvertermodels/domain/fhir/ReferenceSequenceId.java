@@ -51,4 +51,12 @@ public class ReferenceSequenceId implements Serializable {
     public int hashCode() {
         return getIdentifier() != null ? getIdentifier().hashCode() : 0;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+
+        return hasValue;
+    }
 }

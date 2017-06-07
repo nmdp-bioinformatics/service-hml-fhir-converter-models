@@ -240,4 +240,26 @@ public class FhirMessage implements Serializable {
         result = 31 * result + (getSsps() != null ? getSsps().hashCode() : 0);
         return result;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getAlleleDatabases() != null && getAlleleDatabases().hasValue()) { hasValue = true; }
+        if (getAlleleNames() != null && getAlleleNames().hasValue()) { hasValue = true; }
+        if (getGeneticsPhaseSets() != null && getGeneticsPhaseSets().hasValue()) { hasValue = true; }
+        if (getGenotypingResultsHaploids() != null && getGenotypingResultsHaploids().hasValue()) { hasValue = true; }
+        if (getGenotypingResultsMethods() != null && getGenotypingResultsMethods().hasValue()) { hasValue = true; }
+        if (getGlstrings() != null && getGlstrings().hasValue()) { hasValue = true; }
+        if (getHaploids() != null && getHaploids().hasValue()) { hasValue = true; }
+        if (getObservations() != null && getObservations().hasValue()) { hasValue = true; }
+        if (getOrganization() != null && getOrganization().hasValue()) { hasValue = true; }
+        if (getPatient() != null && getPatient().hasValue()) { hasValue = true; }
+        if (getSbtNgss() != null && getSbtNgss().hasValue()) { hasValue = true; }
+        if (getSequences() != null && getSequences().hasValue()) { hasValue = true; }
+        if (getSpecimens() != null && getSpecimens().hasValue()) { hasValue = true; }
+        if (getSsos() != null && getSsos().hasValue()) { hasValue = true; }
+        if (getSsps() != null && getSsps().hasValue()) { hasValue = true; }
+
+        return hasValue;
+    }
 }

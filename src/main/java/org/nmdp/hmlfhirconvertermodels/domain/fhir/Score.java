@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class Score implements Serializable {
@@ -50,5 +52,13 @@ public class Score implements Serializable {
     @Override
     public int hashCode() {
         return getValue() != null ? getValue().hashCode() : 0;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getValue())) { hasValue = true; }
+
+        return hasValue;
     }
 }

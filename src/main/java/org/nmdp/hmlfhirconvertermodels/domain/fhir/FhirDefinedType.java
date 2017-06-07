@@ -24,6 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 public class FhirDefinedType implements Serializable {
@@ -53,5 +55,15 @@ public class FhirDefinedType implements Serializable {
 
     public void setMethod(String method) {
         this.method = method;
+    }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
+        if (!StringUtils.isBlank(getFhirType())) { hasValue = true; }
+        if (!StringUtils.isBlank(getMethod())) { hasValue = true; }
+
+        return hasValue;
     }
 }

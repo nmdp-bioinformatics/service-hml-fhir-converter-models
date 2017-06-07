@@ -39,4 +39,12 @@ public class GenotypingResultsMethods implements Serializable {
     public void setGenotypingResultsMethods(List<GenotypingResultsMethod> genotypingResultsMethods) {
         this.genotypingResultsMethods = genotypingResultsMethods;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getGenotypingResultsMethods() != null && getGenotypingResultsMethods().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

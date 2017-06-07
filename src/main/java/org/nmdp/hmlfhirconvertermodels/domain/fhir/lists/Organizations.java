@@ -39,4 +39,12 @@ public class Organizations implements Serializable {
     public void setOrganizations(List<Organization> organizations) {
         this.organizations = organizations;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getOrganizations() != null && getOrganizations().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

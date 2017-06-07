@@ -39,4 +39,12 @@ public class Ssps implements Serializable {
     public void setSsps(List<Ssp> ssps) {
         this.ssps = ssps;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getSsps() != null && getSsps().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }

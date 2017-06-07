@@ -39,4 +39,12 @@ public class Glstrings implements Serializable {
     public void setGlstrings(List<Glstring> glstrings) {
         this.glstrings = glstrings;
     }
+
+    public Boolean hasValue() {
+        Boolean hasValue = false;
+
+        if (getGlstrings() != null && getGlstrings().size() > 0) { hasValue = true; }
+
+        return hasValue;
+    }
 }
