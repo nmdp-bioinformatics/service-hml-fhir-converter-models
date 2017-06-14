@@ -47,7 +47,7 @@ public class FhirMessage implements Serializable {
         return patients;
     }
 
-    public void setPatients(Patients patienst) {
+    public void setPatients(Patients patients) {
         this.patients = patients;
     }
 
