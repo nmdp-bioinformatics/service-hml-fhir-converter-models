@@ -70,12 +70,12 @@ public class GeneticsPhaseSet extends Observation implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getPhasingGroup())) { hasValue = true; }
-        if (!StringUtils.isBlank(getPhaseSet())) { hasValue = true; }
-        if (super.hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getPhasingGroup())) { return true; }
+        if (!StringUtils.isBlank(getPhaseSet())) { return true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

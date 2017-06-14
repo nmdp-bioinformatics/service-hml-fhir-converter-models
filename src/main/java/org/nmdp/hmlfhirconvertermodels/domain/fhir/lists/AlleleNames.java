@@ -41,10 +41,10 @@ public class AlleleNames implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getAlleleNames() != null && getAlleleNames().size() > 0) { hasValue = true; }
+        if (getAlleleNames() != null && getAlleleNames().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

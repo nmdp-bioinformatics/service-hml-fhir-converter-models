@@ -41,10 +41,10 @@ public class Sequences implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getSequences() != null && getSequences().size() > 0) { hasValue = true; }
+        if (getSequences() != null && getSequences().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

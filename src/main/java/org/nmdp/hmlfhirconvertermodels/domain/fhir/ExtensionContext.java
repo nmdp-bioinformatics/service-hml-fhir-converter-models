@@ -30,9 +30,9 @@ import java.io.Serializable;
 
 public class ExtensionContext implements Serializable {
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
 
-        return hasValue;
+        return false;
     }
 }

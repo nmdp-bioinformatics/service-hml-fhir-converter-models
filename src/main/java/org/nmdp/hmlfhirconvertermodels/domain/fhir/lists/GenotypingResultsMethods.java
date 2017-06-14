@@ -41,10 +41,10 @@ public class GenotypingResultsMethods implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getGenotypingResultsMethods() != null && getGenotypingResultsMethods().size() > 0) { hasValue = true; }
+        if (getGenotypingResultsMethods() != null && getGenotypingResultsMethods().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

@@ -113,15 +113,15 @@ public class Variant implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getStart() != null && getStart() > 0) { hasValue = true; }
-        if (getEnd() != null && getEnd() > 0) { hasValue = true; }
-        if (!StringUtils.isBlank(getObservedAllele())) { hasValue = true; }
-        if (!StringUtils.isBlank(getReferenceAllele())) { hasValue = true; }
-        if (!StringUtils.isBlank(getCigar())) { hasValue = true; }
-        if (getVariantPointer() != null && getVariantPointer().hasValue()) { hasValue = true; }
+        if (getStart() != null && getStart() > 0) { return true; }
+        if (getEnd() != null && getEnd() > 0) { return true; }
+        if (!StringUtils.isBlank(getObservedAllele())) { return true; }
+        if (!StringUtils.isBlank(getReferenceAllele())) { return true; }
+        if (!StringUtils.isBlank(getCigar())) { return true; }
+        if (getVariantPointer() != null && getVariantPointer().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

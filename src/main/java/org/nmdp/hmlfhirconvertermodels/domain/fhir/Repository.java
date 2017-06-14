@@ -113,15 +113,15 @@ public class Repository implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getType() != null && getType().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getUri())) { hasValue = true; }
-        if (!StringUtils.isBlank(getName())) { hasValue = true; }
-        if (!StringUtils.isBlank(getDatasetId())) { hasValue = true; }
-        if (!StringUtils.isBlank(getVariantsetId())) { hasValue = true; }
-        if (!StringUtils.isBlank(getReadsetId())) { hasValue = true; }
+        if (getType() != null && getType().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getUri())) { return true; }
+        if (!StringUtils.isBlank(getName())) { return true; }
+        if (!StringUtils.isBlank(getDatasetId())) { return true; }
+        if (!StringUtils.isBlank(getVariantsetId())) { return true; }
+        if (!StringUtils.isBlank(getReadsetId())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

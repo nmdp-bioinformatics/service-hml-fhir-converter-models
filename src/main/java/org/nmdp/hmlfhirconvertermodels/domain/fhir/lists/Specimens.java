@@ -41,10 +41,10 @@ public class Specimens implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getSpecimens() != null && getSpecimens().size() > 0) { hasValue = true; }
+        if (getSpecimens() != null && getSpecimens().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

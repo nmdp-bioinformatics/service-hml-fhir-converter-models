@@ -41,10 +41,10 @@ public class Organizations implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getOrganizations() != null && getOrganizations().size() > 0) { hasValue = true; }
+        if (getOrganizations() != null && getOrganizations().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

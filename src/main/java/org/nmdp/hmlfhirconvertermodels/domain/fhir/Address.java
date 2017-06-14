@@ -125,16 +125,16 @@ public class Address implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getStreet1())) { hasValue = true; }
-        if (!StringUtils.isBlank(getStreet2())) { hasValue = true; }
-        if (!StringUtils.isBlank(getStreet3())) { hasValue = true; }
-        if (getZip() != null && getZip() > 0) { hasValue = true; }
-        if (!StringUtils.isBlank(getState())) { hasValue = true; }
-        if (!StringUtils.isBlank(getCity())) { hasValue = true; }
-        if (!StringUtils.isBlank(getCountry())) { hasValue = true; }
+        if (!StringUtils.isBlank(getStreet1())) { return true; }
+        if (!StringUtils.isBlank(getStreet2())) { return true; }
+        if (!StringUtils.isBlank(getStreet3())) { return true; }
+        if (getZip() != null && getZip() > 0) { return true; }
+        if (!StringUtils.isBlank(getState())) { return true; }
+        if (!StringUtils.isBlank(getCity())) { return true; }
+        if (!StringUtils.isBlank(getCountry())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

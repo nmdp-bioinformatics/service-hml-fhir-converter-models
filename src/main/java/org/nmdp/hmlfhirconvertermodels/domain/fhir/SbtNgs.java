@@ -55,11 +55,11 @@ public class SbtNgs extends Observation implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
-        if (super.hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getLocus())) { return true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

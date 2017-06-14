@@ -207,23 +207,23 @@ public class Quality implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getCode() != null && getCode().hasValue()) { hasValue = true; }
-        if (getStandardSequence() != null && getStandardSequence().hasValue()) { hasValue = true; }
-        if (getStart() != null && getStart() > 0) { hasValue = true; }
-        if (getEnd() != null && getEnd() > 0) { hasValue = true; }
-        if (getScore() != null && getScore().hasValue()) { hasValue = true; }
-        if (getMethod() != null && getMethod().hasValue()) { hasValue = true; }
-        if (getTruthFN() != null) { hasValue = true; }
-        if (getQueryTP() != null) { hasValue = true; }
-        if (getTruthTP() != null) { hasValue = true; }
-        if (getQueryFP() != null) { hasValue = true; }
-        if (getGtFP() != null) { hasValue = true; }
-        if (getPrecision() != null) { hasValue = true; }
-        if (getRecall() != null) { hasValue = true; }
-        if (getfScore() != null) { hasValue = true; }
+        if (getCode() != null && getCode().hasValue()) { return true; }
+        if (getStandardSequence() != null && getStandardSequence().hasValue()) { return true; }
+        if (getStart() != null && getStart() > 0) { return true; }
+        if (getEnd() != null && getEnd() > 0) { return true; }
+        if (getScore() != null && getScore().hasValue()) { return true; }
+        if (getMethod() != null && getMethod().hasValue()) { return true; }
+        if (getTruthFN() != null) { return true; }
+        if (getQueryTP() != null) { return true; }
+        if (getTruthTP() != null) { return true; }
+        if (getQueryFP() != null) { return true; }
+        if (getGtFP() != null) { return true; }
+        if (getPrecision() != null) { return true; }
+        if (getRecall() != null) { return true; }
+        if (getfScore() != null) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

@@ -30,8 +30,8 @@ import java.io.Serializable;
 
 public class StructureDefinitionKind implements Serializable {
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        return hasValue;
+        return false;
     }
 }

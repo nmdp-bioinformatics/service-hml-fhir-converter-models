@@ -53,10 +53,10 @@ public class ReferenceSequenceId implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
+        if (getIdentifier() != null && getIdentifier().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

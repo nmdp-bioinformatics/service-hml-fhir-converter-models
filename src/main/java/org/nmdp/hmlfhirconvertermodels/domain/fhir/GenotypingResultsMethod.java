@@ -69,12 +69,12 @@ public class GenotypingResultsMethod extends StructureDefinition implements Seri
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getTestId())) { hasValue = true; }
-        if (!StringUtils.isBlank(getTestIdSource())) { hasValue = true; }
-        if (super.hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getTestId())) { return true; }
+        if (!StringUtils.isBlank(getTestIdSource())) { return true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

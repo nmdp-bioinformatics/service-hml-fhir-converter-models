@@ -41,10 +41,10 @@ public class GenotypingResultsHaploids implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getGenotypingResultsHaploids() != null && getGenotypingResultsHaploids().size() > 0) { hasValue = true; }
+        if (getGenotypingResultsHaploids() != null && getGenotypingResultsHaploids().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

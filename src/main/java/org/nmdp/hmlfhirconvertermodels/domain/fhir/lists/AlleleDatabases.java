@@ -42,10 +42,10 @@ public class AlleleDatabases implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getAlleleDatabases() != null && getAlleleDatabases().size() > 0) { hasValue = true; }
+        if (getAlleleDatabases() != null && getAlleleDatabases().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

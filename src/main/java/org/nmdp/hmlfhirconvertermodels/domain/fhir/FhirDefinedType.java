@@ -58,12 +58,12 @@ public class FhirDefinedType implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
-        if (!StringUtils.isBlank(getFhirType())) { hasValue = true; }
-        if (!StringUtils.isBlank(getMethod())) { hasValue = true; }
+        if (!StringUtils.isBlank(getLocus())) { return true; }
+        if (!StringUtils.isBlank(getFhirType())) { return true; }
+        if (!StringUtils.isBlank(getMethod())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

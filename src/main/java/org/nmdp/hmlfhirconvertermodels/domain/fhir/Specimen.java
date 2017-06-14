@@ -1,6 +1,7 @@
 package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Observations;
 
 import java.util.Date;
 
@@ -40,6 +41,7 @@ public class Specimen implements Serializable {
     private Request request;
     private String note;
     private Type type;
+    private Observations observations;
 
     public Identifier getIdentifier() {
         return identifier;
@@ -113,6 +115,14 @@ public class Specimen implements Serializable {
         this.type = type;
     }
 
+    public Observations getObservations() {
+        return observations;
+    }
+
+    public void setObservations(Observations observations) {
+        this.observations = observations;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -135,7 +145,8 @@ public class Specimen implements Serializable {
         if (getRequest() != null ? !getRequest().equals(specimen.getRequest()) : specimen.getRequest() != null)
             return false;
         if (getNote() != null ? !getNote().equals(specimen.getNote()) : specimen.getNote() != null) return false;
-        return getType() != null ? getType().equals(specimen.getType()) : specimen.getType() == null;
+        if (getType() != null ? !getType().equals(specimen.getType()) : specimen.getType() != null) return false;
+        return getObservations() != null ? getObservations().equals(specimen.getObservations()) : specimen.getObservations() == null;
     }
 
     @Override
@@ -149,22 +160,24 @@ public class Specimen implements Serializable {
         result = 31 * result + (getRequest() != null ? getRequest().hashCode() : 0);
         result = 31 * result + (getNote() != null ? getNote().hashCode() : 0);
         result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        result = 31 * result + (getObservations() != null ? getObservations().hashCode() : 0);
         return result;
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
-        if (getCollection() != null && getCollection().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getAccessionIdentifier())) { hasValue = true; }
-        if (getStatus() != null) { hasValue = true; }
-        if (getReceivedTime() != null) { hasValue = true; }
-        if (getParent() != null && getParent().hasValue()) { hasValue = true; }
-        if (getReceivedTime() != null) { hasValue = true; }
-        if (!StringUtils.isBlank(getNote())) { hasValue = true; }
-        if (getType() != null && getType().hasValue()) { hasValue = true; }
+        if (getIdentifier() != null && getIdentifier().hasValue()) { return true; }
+        if (getCollection() != null && getCollection().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getAccessionIdentifier())) { return true; }
+        if (getStatus() != null) { return true; }
+        if (getReceivedTime() != null) { return true; }
+        if (getParent() != null && getParent().hasValue()) { return true; }
+        if (getReceivedTime() != null) { return true; }
+        if (!StringUtils.isBlank(getNote())) { return true; }
+        if (getType() != null && getType().hasValue()) { return true; }
+        if (getObservations() != null && getObservations().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

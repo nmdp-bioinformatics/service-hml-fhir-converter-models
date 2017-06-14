@@ -26,6 +26,9 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import ch.qos.logback.core.encoder.ByteArrayUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Glstrings;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Haploids;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Specimens;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -46,6 +49,8 @@ public class Patient implements Serializable {
     private Byte[] photo;
     private Practitioner generalPractitioner;
     private Organization managingOrganization;
+    private Specimens specimens;
+    private DiagnosticReport diagnosticReport;
 
     public Identifier getIdentifier() {
         return identifier;
@@ -151,6 +156,10 @@ public class Patient implements Serializable {
         this.managingOrganization = managingOrganization;
     }
 
+    public Specimens getSpecimens() {
+        return specimens;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -179,7 +188,11 @@ public class Patient implements Serializable {
         if (!Arrays.equals(getPhoto(), patient.getPhoto())) return false;
         if (getGeneralPractitioner() != null ? !getGeneralPractitioner().equals(patient.getGeneralPractitioner()) : patient.getGeneralPractitioner() != null)
             return false;
-        return getManagingOrganization() != null ? getManagingOrganization().equals(patient.getManagingOrganization()) : patient.getManagingOrganization() == null;
+        if (getManagingOrganization() != null ? !getManagingOrganization().equals(patient.getManagingOrganization()) : patient.getManagingOrganization() != null)
+            return false;
+        if (getSpecimens() != null ? !getSpecimens().equals(patient.getSpecimens()) : patient.getSpecimens() != null)
+            return false;
+        return getDiagnosticReport() != null ? getDiagnosticReport().equals(patient.getDiagnosticReport()) : patient.getDiagnosticReport() == null;
     }
 
     @Override
@@ -197,23 +210,39 @@ public class Patient implements Serializable {
         result = 31 * result + Arrays.hashCode(getPhoto());
         result = 31 * result + (getGeneralPractitioner() != null ? getGeneralPractitioner().hashCode() : 0);
         result = 31 * result + (getManagingOrganization() != null ? getManagingOrganization().hashCode() : 0);
+        result = 31 * result + (getSpecimens() != null ? getSpecimens().hashCode() : 0);
+        result = 31 * result + (getDiagnosticReport() != null ? getDiagnosticReport().hashCode() : 0);
         return result;
     }
 
+    public void setSpecimens(Specimens specimens) {
+        this.specimens = specimens;
+    }
+
+    public DiagnosticReport getDiagnosticReport() {
+        return diagnosticReport;
+    }
+
+    public void setDiagnosticReport(DiagnosticReport diagnosticReport) {
+        this.diagnosticReport = diagnosticReport;
+    }
+
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getName())) { hasValue = true; }
-        if (!StringUtils.isBlank(getTelecom())) { hasValue = true; }
-        if (!StringUtils.isBlank(getGender())) { hasValue = true; }
-        if (getBirthDate() != null) { hasValue = true; }
-        if (getAddress() != null && getAddress().hasValue()) { hasValue = true; }
-        if (getMaritalStatus() != null) { hasValue = true; }
-        if (getPhoto() != null && getPhoto().length > 0) { hasValue = true; }
-        if (getGeneralPractitioner() != null && getGeneralPractitioner().hasValue()) { hasValue = true; }
-        if (getManagingOrganization() != null && getManagingOrganization().hasValue()) { hasValue = true; }
+        if (getIdentifier() != null && getIdentifier().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getName())) { return true; }
+        if (!StringUtils.isBlank(getTelecom())) { return true; }
+        if (!StringUtils.isBlank(getGender())) { return true; }
+        if (getBirthDate() != null) { return true; }
+        if (getAddress() != null && getAddress().hasValue()) { return true; }
+        if (getMaritalStatus() != null) { return true; }
+        if (getPhoto() != null && getPhoto().length > 0) { return true; }
+        if (getGeneralPractitioner() != null && getGeneralPractitioner().hasValue()) { return true; }
+        if (getManagingOrganization() != null && getManagingOrganization().hasValue()) { return true; }
+        if (getSpecimens() != null && getSpecimens().hasValue()) { return true; }
+        if (getDiagnosticReport() != null && getDiagnosticReport().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

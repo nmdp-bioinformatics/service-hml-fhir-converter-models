@@ -67,11 +67,11 @@ public class Collection implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getMethod())) { hasValue = true; }
-        if (!StringUtils.isBlank(getBodySite())) { hasValue = true; }
+        if (!StringUtils.isBlank(getMethod())) { return true; }
+        if (!StringUtils.isBlank(getBodySite())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

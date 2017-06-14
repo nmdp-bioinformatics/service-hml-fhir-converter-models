@@ -1,7 +1,7 @@
-package org.nmdp.hmlfhirconvertermodels.domain.fhir;
+package org.nmdp.hmlfhirconvertermodels.domain.fhir.lists;
 
 /**
- * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 5/26/17.
+ * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 6/14/17.
  * <p>
  * service-hml-fhir-converter-models
  * Copyright (c) 2012-2017 National Marrow Donor Program (NMDP)
@@ -24,14 +24,18 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.DiagnosticReport;
 
-import java.io.Serializable;
+import java.util.List;
 
-public class Contact implements Serializable {
-    public Boolean hasValue() {
-        
+public class DiagnosticReports {
+    private List<DiagnosticReport> diagnosticReports;
 
-        return false;
+    public List<DiagnosticReport> getDiagnosticReports() {
+        return diagnosticReports;
+    }
+
+    public void setDiagnosticReports(List<DiagnosticReport> diagnosticReports) {
+        this.diagnosticReports = diagnosticReports;
     }
 }

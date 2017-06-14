@@ -69,12 +69,12 @@ public class Glstring extends StructureDefinition implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getUri())) { hasValue = true; }
-        if (!StringUtils.isBlank(getValue())) { hasValue = true; }
-        if (super.hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getUri())) { return true; }
+        if (!StringUtils.isBlank(getValue())) { return true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

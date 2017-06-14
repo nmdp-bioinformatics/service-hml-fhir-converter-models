@@ -56,10 +56,10 @@ public class Organization implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getIdentifier() != null && identifier.hasValue()) { hasValue = true; }
+        if (getIdentifier() != null && identifier.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

@@ -335,35 +335,35 @@ public class StructureDefinition implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getUrl() != null) { hasValue = true; }
-        if (getIdentifier() != null) { hasValue = true; }
-        if (!StringUtils.isBlank(getVersion())) { hasValue = true; }
-        if (!StringUtils.isBlank(getName())) { hasValue = true; }
-        if (!StringUtils.isBlank(getTitle())) { hasValue = true; }
-        if (getStatus() != null) { hasValue = true; }
-        if (getExperimental() != null) { hasValue = true; }
-        if (getDate() != null) { hasValue = true; }
-        if (!StringUtils.isBlank(getPublisher())) { hasValue = true; }
-        if (getContact() != null && getContact().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getDescription())) { hasValue = true; }
-        if (getUseContext() != null && getUseContext().hasValue()) { hasValue = true; }
-        if (getJurisdiction() != null && getJurisdiction().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getPurpose())) { hasValue = true; }
-        if (!StringUtils.isBlank(getCopyright())) { hasValue = true; }
-        if (!StringUtils.isBlank(getKeyword())) { hasValue = true; }
-        if (!StringUtils.isBlank(getFhirVersion())) { hasValue = true; }
-        if (getKind() != null && getKind().hasValue()) { hasValue = true; }
-        if (getAbstracted() != null) { hasValue = true; }
-        if (getContextType() != null && getContextType().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getContext())) { hasValue = true; }
-        if (!StringUtils.isBlank(getContextVariant())) { hasValue = true; }
-        if (!StringUtils.isBlank(getContextVariant())) { hasValue = true; }
-        if (getType() != null && getType().hasValue()) { hasValue = true; }
-        if (getBaseDefinition() != null) { hasValue = true; }
-        if (getDerivation() != null && getDerivation().hasValue()) { hasValue = true; }
+        if (getUrl() != null) { return true; }
+        if (getIdentifier() != null) { return true; }
+        if (!StringUtils.isBlank(getVersion())) { return true; }
+        if (!StringUtils.isBlank(getName())) { return true; }
+        if (!StringUtils.isBlank(getTitle())) { return true; }
+        if (getStatus() != null) { return true; }
+        if (getExperimental() != null) { return true; }
+        if (getDate() != null) { return true; }
+        if (!StringUtils.isBlank(getPublisher())) { return true; }
+        if (getContact() != null && getContact().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getDescription())) { return true; }
+        if (getUseContext() != null && getUseContext().hasValue()) { return true; }
+        if (getJurisdiction() != null && getJurisdiction().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getPurpose())) { return true; }
+        if (!StringUtils.isBlank(getCopyright())) { return true; }
+        if (!StringUtils.isBlank(getKeyword())) { return true; }
+        if (!StringUtils.isBlank(getFhirVersion())) { return true; }
+        if (getKind() != null && getKind().hasValue()) { return true; }
+        if (getAbstracted() != null) { return true; }
+        if (getContextType() != null && getContextType().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getContext())) { return true; }
+        if (!StringUtils.isBlank(getContextVariant())) { return true; }
+        if (!StringUtils.isBlank(getContextVariant())) { return true; }
+        if (getType() != null && getType().hasValue()) { return true; }
+        if (getBaseDefinition() != null) { return true; }
+        if (getDerivation() != null && getDerivation().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

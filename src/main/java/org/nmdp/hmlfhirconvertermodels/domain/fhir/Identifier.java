@@ -67,11 +67,11 @@ public class Identifier implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getSystem())) { hasValue = true; }
-        if (!StringUtils.isBlank(getValue())) { hasValue = true; }
+        if (!StringUtils.isBlank(getSystem())) { return true; }
+        if (!StringUtils.isBlank(getValue())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

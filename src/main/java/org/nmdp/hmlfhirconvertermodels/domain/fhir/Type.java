@@ -55,10 +55,10 @@ public class Type implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getSpecimenType())) { hasValue = true; }
+        if (!StringUtils.isBlank(getSpecimenType())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

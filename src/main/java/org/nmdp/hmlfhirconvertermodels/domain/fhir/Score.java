@@ -55,10 +55,10 @@ public class Score implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getValue())) { hasValue = true; }
+        if (!StringUtils.isBlank(getValue())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

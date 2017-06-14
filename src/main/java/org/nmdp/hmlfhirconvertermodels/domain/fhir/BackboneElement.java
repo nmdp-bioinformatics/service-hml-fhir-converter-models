@@ -139,17 +139,17 @@ public class BackboneElement implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getChromosome() != null && getChromosome().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getGenomeBuild())) { hasValue = true; }
-        if (getReferenceSequenceId() != null && getReferenceSequenceId().hasValue()) { hasValue = true; }
-        if (getReferenceSeqPointer() != null && getReferenceSeqPointer().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getReferenceSeqString())) { hasValue = true; }
-        if (getStrand() != null && getStrand() > -10) { hasValue = true; }
-        if (getWindowStart() != null && getWindowStart() > 0) { hasValue = true; }
-        if (getWindowEnd() != null && getWindowEnd() > 0) { hasValue = true; }
+        if (getChromosome() != null && getChromosome().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getGenomeBuild())) { return true; }
+        if (getReferenceSequenceId() != null && getReferenceSequenceId().hasValue()) { return true; }
+        if (getReferenceSeqPointer() != null && getReferenceSeqPointer().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getReferenceSeqString())) { return true; }
+        if (getStrand() != null && getStrand() > -10) { return true; }
+        if (getWindowStart() != null && getWindowStart() > 0) { return true; }
+        if (getWindowEnd() != null && getWindowEnd() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

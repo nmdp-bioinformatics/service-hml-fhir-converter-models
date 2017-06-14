@@ -26,6 +26,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
+import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.*;
 
 import java.io.Serializable;
 
@@ -49,6 +50,17 @@ public class Observation implements Serializable {
     private Object method;
     private Specimen specimen;
     private Device device;
+    private DiagnosticReport diagnosticReport;
+    private Glstrings glstrings;
+    private Haploids haploids;
+    private String geneticsAlleleName;
+    private String geneticsGene;
+    private SbtNgss sbtNgss;
+    private Sequences sequences;
+    private GeneticsPhaseSet geneticsPhaseSet;
+    private GenotypingResultsMethod genotypingResultsMethod;
+    private GenotypingResultsHaploids genotypingResultsHaploids;
+
 
     public Identifier getIdentifier() {
         return identifier;
@@ -194,6 +206,88 @@ public class Observation implements Serializable {
         this.device = device;
     }
 
+    public Glstrings getGlstrings() {
+        return glstrings;
+    }
+
+    public void setGlstrings(Glstrings glstrings) {
+        this.glstrings = glstrings;
+    }
+
+    public Haploids getHaploids() {
+        return haploids;
+    }
+
+    public void setHaploids(Haploids haploids) {
+        this.haploids = haploids;
+    }
+
+    public String getGeneticsAlleleName() {
+        return geneticsAlleleName;
+    }
+
+    public void setGeneticsAlleleName(String geneticsAlleleName) {
+        this.geneticsAlleleName = geneticsAlleleName;
+    }
+
+    public String getGeneticsGene() {
+        return geneticsGene;
+    }
+
+    public void setGeneticsGene(String geneticsGene) {
+        this.geneticsGene = geneticsGene;
+    }
+
+    public SbtNgss getSbtNgss() {
+        return sbtNgss;
+    }
+
+    public void setSbtNgss(SbtNgss sbtNgss) {
+        this.sbtNgss = sbtNgss;
+    }
+
+    public Sequences getSequences() {
+        return sequences;
+    }
+
+    public void setSequences(Sequences sequences) {
+        this.sequences = sequences;
+    }
+
+    public GeneticsPhaseSet getGeneticsPhaseSet() {
+        return geneticsPhaseSet;
+    }
+
+    public void setGeneticsPhaseSet(GeneticsPhaseSet geneticsPhaseSet) {
+        this.geneticsPhaseSet = geneticsPhaseSet;
+    }
+
+    public GenotypingResultsMethod getGenotypingResultsMethod() {
+        return genotypingResultsMethod;
+    }
+
+    public void setGenotypingResultsMethod(GenotypingResultsMethod genotypingResultsMethod) {
+        this.genotypingResultsMethod = genotypingResultsMethod;
+    }
+
+    public GenotypingResultsHaploids getGenotypingResultsHaploids() {
+        return genotypingResultsHaploids;
+    }
+
+    public void setGenotypingResultsHaploids(GenotypingResultsHaploids genotypingResultsHaploids) {
+        this.genotypingResultsHaploids = genotypingResultsHaploids;
+    }
+
+
+    public DiagnosticReport getDiagnosticReport() {
+        return diagnosticReport;
+
+    }
+
+    public void setDiagnosticReport(DiagnosticReport diagnosticReport) {
+        this.diagnosticReport = diagnosticReport;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -226,7 +320,25 @@ public class Observation implements Serializable {
         if (getMethod() != null ? !getMethod().equals(that.getMethod()) : that.getMethod() != null) return false;
         if (getSpecimen() != null ? !getSpecimen().equals(that.getSpecimen()) : that.getSpecimen() != null)
             return false;
-        return getDevice() != null ? getDevice().equals(that.getDevice()) : that.getDevice() == null;
+        if (getDevice() != null ? !getDevice().equals(that.getDevice()) : that.getDevice() != null) return false;
+        if (getDiagnosticReport() != null ? !getDiagnosticReport().equals(that.getDiagnosticReport()) : that.getDiagnosticReport() != null)
+            return false;
+        if (getGlstrings() != null ? !getGlstrings().equals(that.getGlstrings()) : that.getGlstrings() != null)
+            return false;
+        if (getHaploids() != null ? !getHaploids().equals(that.getHaploids()) : that.getHaploids() != null)
+            return false;
+        if (getGeneticsAlleleName() != null ? !getGeneticsAlleleName().equals(that.getGeneticsAlleleName()) : that.getGeneticsAlleleName() != null)
+            return false;
+        if (getGeneticsGene() != null ? !getGeneticsGene().equals(that.getGeneticsGene()) : that.getGeneticsGene() != null)
+            return false;
+        if (getSbtNgss() != null ? !getSbtNgss().equals(that.getSbtNgss()) : that.getSbtNgss() != null) return false;
+        if (getSequences() != null ? !getSequences().equals(that.getSequences()) : that.getSequences() != null)
+            return false;
+        if (getGeneticsPhaseSet() != null ? !getGeneticsPhaseSet().equals(that.getGeneticsPhaseSet()) : that.getGeneticsPhaseSet() != null)
+            return false;
+        if (getGenotypingResultsMethod() != null ? !getGenotypingResultsMethod().equals(that.getGenotypingResultsMethod()) : that.getGenotypingResultsMethod() != null)
+            return false;
+        return getGenotypingResultsHaploids() != null ? getGenotypingResultsHaploids().equals(that.getGenotypingResultsHaploids()) : that.getGenotypingResultsHaploids() == null;
     }
 
     @Override
@@ -249,31 +361,51 @@ public class Observation implements Serializable {
         result = 31 * result + (getMethod() != null ? getMethod().hashCode() : 0);
         result = 31 * result + (getSpecimen() != null ? getSpecimen().hashCode() : 0);
         result = 31 * result + (getDevice() != null ? getDevice().hashCode() : 0);
+        result = 31 * result + (getDiagnosticReport() != null ? getDiagnosticReport().hashCode() : 0);
+        result = 31 * result + (getGlstrings() != null ? getGlstrings().hashCode() : 0);
+        result = 31 * result + (getHaploids() != null ? getHaploids().hashCode() : 0);
+        result = 31 * result + (getGeneticsAlleleName() != null ? getGeneticsAlleleName().hashCode() : 0);
+        result = 31 * result + (getGeneticsGene() != null ? getGeneticsGene().hashCode() : 0);
+        result = 31 * result + (getSbtNgss() != null ? getSbtNgss().hashCode() : 0);
+        result = 31 * result + (getSequences() != null ? getSequences().hashCode() : 0);
+        result = 31 * result + (getGeneticsPhaseSet() != null ? getGeneticsPhaseSet().hashCode() : 0);
+        result = 31 * result + (getGenotypingResultsMethod() != null ? getGenotypingResultsMethod().hashCode() : 0);
+        result = 31 * result + (getGenotypingResultsHaploids() != null ? getGenotypingResultsHaploids().hashCode() : 0);
         return result;
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getIdentifier() != null && getIdentifier().hasValue()) { hasValue = true; }
-        if (getBasedOn() != null && getBasedOn().hasValue()) { hasValue = true; }
-        if (getStatus() != null) { hasValue = true; }
-        if (getCategory() != null && getCategory().hasValue()) { hasValue = true; }
-        if (getCode() != null && getCode().hasValue()) { hasValue = true; }
-        if (!StringUtils.isBlank(getSubject())) { hasValue = true; }
-        if (!StringUtils.isBlank(getContext())) { hasValue = true; }
-        if (getEffective() != null) { hasValue = true; }
-        if (getIssued() != null) { hasValue = true; }
-        if (getPerformer() != null && getPerformer().hasValue()) { hasValue = true; }
-        if (getValue() != null) { hasValue = true; }
-        if (getDataAbsentReason() != null) { hasValue = true; }
-        if (getInterpretation() != null) { hasValue = true; }
-        if (!StringUtils.isBlank(getComment())) { hasValue = true; }
-        if (getBodySite() != null) { hasValue = true; }
-        if (getMethod() != null) { hasValue = true; }
-        if (getDevice() != null && getDevice().hasValue()) { hasValue = true; }
-        if (getSpecimen() != null && getSpecimen().hasValue()) { hasValue = true; }
+        if (getIdentifier() != null && getIdentifier().hasValue()) { return true; }
+        if (getBasedOn() != null && getBasedOn().hasValue()) { return true; }
+        if (getStatus() != null) { return true; }
+        if (getCategory() != null && getCategory().hasValue()) { return true; }
+        if (getCode() != null && getCode().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getSubject())) { return true; }
+        if (!StringUtils.isBlank(getContext())) { return true; }
+        if (getEffective() != null) { return true; }
+        if (getIssued() != null) { return true; }
+        if (getPerformer() != null && getPerformer().hasValue()) { return true; }
+        if (getValue() != null) { return true; }
+        if (getDataAbsentReason() != null) { return true; }
+        if (getInterpretation() != null) { return true; }
+        if (!StringUtils.isBlank(getComment())) { return true; }
+        if (getBodySite() != null) { return true; }
+        if (getMethod() != null) { return true; }
+        if (getDevice() != null && getDevice().hasValue()) { return true; }
+        if (getSpecimen() != null && getSpecimen().hasValue()) { return true; }
+        if (getDiagnosticReport() != null && getDiagnosticReport().hasValue()) { return true; }
+        if (getGlstrings() != null && getGlstrings().hasValue()) { return true; }
+        if (getHaploids() != null && getHaploids().hasValue()) { return true; }
+        if (!StringUtils.isBlank(getGeneticsAlleleName())) { return true; }
+        if (!StringUtils.isBlank(getGeneticsGene())) { return true; }
+        if (getSbtNgss() != null && getSbtNgss().hasValue()) { return true; }
+        if (getSequences() != null && getSequences().hasValue()) { return true; }
+        if (getGeneticsPhaseSet() != null && getGeneticsPhaseSet().hasValue()) { return true; }
+        if (getGenotypingResultsMethod() != null && getGenotypingResultsMethod().hasValue()) { return true; }
+        if (getGenotypingResultsHaploids() != null && getGenotypingResultsHaploids().hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

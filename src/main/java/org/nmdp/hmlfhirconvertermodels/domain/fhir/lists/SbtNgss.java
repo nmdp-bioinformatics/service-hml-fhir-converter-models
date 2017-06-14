@@ -41,10 +41,10 @@ public class SbtNgss implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getSbtNgss() != null && getSbtNgss().size() > 0) { hasValue = true; }
+        if (getSbtNgss() != null && getSbtNgss().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

@@ -41,10 +41,10 @@ public class Glstrings implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getGlstrings() != null && getGlstrings().size() > 0) { hasValue = true; }
+        if (getGlstrings() != null && getGlstrings().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

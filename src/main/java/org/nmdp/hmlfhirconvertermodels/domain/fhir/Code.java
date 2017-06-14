@@ -56,10 +56,10 @@ public class Code implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getName())) { hasValue = true; }
+        if (!StringUtils.isBlank(getName())) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

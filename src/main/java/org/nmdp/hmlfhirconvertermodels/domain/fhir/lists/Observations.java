@@ -41,10 +41,10 @@ public class Observations implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getObservations() != null && getObservations().size() > 0) { hasValue = true; }
+        if (getObservations() != null && getObservations().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

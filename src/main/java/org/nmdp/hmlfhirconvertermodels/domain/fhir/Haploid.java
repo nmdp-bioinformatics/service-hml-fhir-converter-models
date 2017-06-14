@@ -80,13 +80,13 @@ public class Haploid extends StructureDefinition implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (!StringUtils.isBlank(getLocus())) { hasValue = true; }
-        if (!StringUtils.isBlank(getMethod())) { hasValue = true; }
-        if (!StringUtils.isBlank(getHaploidType())) { hasValue = true; }
-        if (super.hasValue()) { hasValue = true; }
+        if (!StringUtils.isBlank(getLocus())) { return true; }
+        if (!StringUtils.isBlank(getMethod())) { return true; }
+        if (!StringUtils.isBlank(getHaploidType())) { return true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

@@ -28,8 +28,8 @@ import java.io.Serializable;
 
 public class Reference implements Serializable {
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        return hasValue;
+        return false;
     }
 }

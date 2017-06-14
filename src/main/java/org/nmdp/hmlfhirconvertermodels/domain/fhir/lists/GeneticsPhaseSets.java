@@ -41,10 +41,10 @@ public class GeneticsPhaseSets implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getGeneticsPhaseSets() != null && getGeneticsPhaseSets().size() > 0) { hasValue = true; }
+        if (getGeneticsPhaseSets() != null && getGeneticsPhaseSets().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

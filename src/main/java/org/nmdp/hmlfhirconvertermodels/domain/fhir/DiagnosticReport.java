@@ -30,10 +30,10 @@ import java.io.Serializable;
 
 public class DiagnosticReport extends Observation implements Serializable {
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (super.hasValue()) { hasValue = true; }
+        if (super.hasValue()) { return true; }
 
-        return hasValue;
+        return false;
     }
 }

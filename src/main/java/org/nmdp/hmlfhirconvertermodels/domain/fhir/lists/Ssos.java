@@ -41,10 +41,10 @@ public class Ssos implements Serializable {
     }
 
     public Boolean hasValue() {
-        Boolean hasValue = false;
+        
 
-        if (getSsos() != null && getSsos().size() > 0) { hasValue = true; }
+        if (getSsos() != null && getSsos().size() > 0) { return true; }
 
-        return hasValue;
+        return false;
     }
 }
