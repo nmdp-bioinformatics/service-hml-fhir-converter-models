@@ -33,8 +33,7 @@ definitions:
     - $ref: '#/definitions/StructureDefinition'
     - type: object
       properties:
-        allele:
-            type: string
+        allele: { type: string }
   BackboneElement:
     properties:
       chromosome: {$ref: Chromosome}
@@ -69,6 +68,16 @@ definitions:
     allOf:
     - $ref: Observation
     - type: object
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
   ExtensionContext:
     properties:
     type: object
