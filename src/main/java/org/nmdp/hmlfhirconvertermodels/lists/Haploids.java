@@ -24,7 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.lists;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.nmdp.hmlfhirconvertermodels.dto.Haploid;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.Haploid;
 
 import java.util.List;
 

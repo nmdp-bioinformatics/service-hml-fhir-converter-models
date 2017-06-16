@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
 
 import org.bson.types.ObjectId;
 
-import org.nmdp.hmlfhirconvertermodels.domain.ICascadable;
+import org.nmdp.hmlfhirconvertermodels.domain.hml.ICascadable;
 import org.nmdp.hmlfhirconvertermodels.domain.internal.MongoConfiguration;
 import org.nmdp.hmlfhirconvertermodels.util.*;
 

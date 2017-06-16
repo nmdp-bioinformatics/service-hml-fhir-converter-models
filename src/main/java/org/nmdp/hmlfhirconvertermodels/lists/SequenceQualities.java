@@ -24,7 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.lists;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.nmdp.hmlfhirconvertermodels.dto.SequenceQuality;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.SequenceQuality;
 
 import java.util.List;
 

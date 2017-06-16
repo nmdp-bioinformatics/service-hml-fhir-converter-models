@@ -25,8 +25,8 @@ package org.nmdp.hmlfhirconvertermodels;
  */
 
 
-import org.nmdp.hmlfhirconvertermodels.dto.Hml;
-import org.nmdp.hmlfhirconvertermodels.dto.HmlId;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.Hml;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.HmlId;
 import org.nmdp.hmlfhirconvertermodels.lists.*;
 
 import java.io.Serializable;

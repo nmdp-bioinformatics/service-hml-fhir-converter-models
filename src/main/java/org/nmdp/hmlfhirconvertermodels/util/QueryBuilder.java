@@ -24,8 +24,8 @@ package org.nmdp.hmlfhirconvertermodels.util;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.nmdp.hmlfhirconvertermodels.dto.QueryCriteria;
-import org.nmdp.hmlfhirconvertermodels.dto.TypeaheadQuery;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.QueryCriteria;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.TypeaheadQuery;
 import org.apache.log4j.Logger;
 import org.nmdp.hmlfhirconvertermodels.domain.base.IMongoDataRepositoryModel;
 import org.springframework.data.domain.PageRequest;

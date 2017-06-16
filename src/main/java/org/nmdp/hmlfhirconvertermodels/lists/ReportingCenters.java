@@ -24,7 +24,7 @@ package org.nmdp.hmlfhirconvertermodels.lists;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.nmdp.hmlfhirconvertermodels.dto.ReportingCenter;
+import org.nmdp.hmlfhirconvertermodels.dto.hml.ReportingCenter;
 
 import java.util.List;
 
