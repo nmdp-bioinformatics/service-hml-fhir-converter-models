@@ -66,12 +66,12 @@
                             <inputSpec>src/main/resources/swagger/swagger-spec.hml.yaml</inputSpec>
                             <language>spring</language>
                             <modelPackage>org.nmdp.hmlfhirconvertermodels.dto.hml</modelPackage>
-                            <apiPackage>io.swagger.api.hml</apiPackage>
                             <configOptions>
                                 <serializableModel>true</serializableModel>
                                 <library>spring-boot</library>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
                                 <dateLibrary>legacy</dateLibrary>
+                                <generateApi>false</generateApi>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -84,12 +84,12 @@
                             <inputSpec>src/main/resources/swagger/swagger-spec.fhir.yaml</inputSpec>
                             <language>spring</language>
                             <modelPackage>org.nmdp.hmlfhirconvertermodels.dto.fhir</modelPackage>
-                            <apiPackage>io.swagger.api.fhir</apiPackage>
                             <configOptions>
                                 <serializableModel>true</serializableModel>
                                 <library>spring-boot</library>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
                                 <dateLibrary>legacy</dateLibrary>
+                                <generateApi>false</generateApi>
                             </configOptions>
                         </configuration>
                     </execution>
