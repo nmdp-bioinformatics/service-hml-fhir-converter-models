@@ -63,13 +63,13 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>src/main/resources/swagger/swagger-spec.hml.yaml</inputSpec>
+                            <inputSpec>${basedir}/src/main/resources/swagger/swagger-spec.hml.yaml</inputSpec>
                             <language>spring</language>
                             <modelPackage>org.nmdp.hmlfhirconvertermodels.dto.hml</modelPackage>
                             <configOptions>
                                 <serializableModel>true</serializableModel>
                                 <library>spring-boot</library>
-                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <sourceFolder>${basedir}/src/gen/java/main</sourceFolder>
                                 <dateLibrary>legacy</dateLibrary>
                                 <generateApi>false</generateApi>
                             </configOptions>
@@ -81,13 +81,13 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>src/main/resources/swagger/swagger-spec.fhir.yaml</inputSpec>
+                            <inputSpec>${basedir}/src/main/resources/swagger/swagger-spec.fhir.yaml</inputSpec>
                             <language>spring</language>
                             <modelPackage>org.nmdp.hmlfhirconvertermodels.dto.fhir</modelPackage>
                             <configOptions>
                                 <serializableModel>true</serializableModel>
                                 <library>spring-boot</library>
-                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <sourceFolder>${basedir}/src/gen/java/main</sourceFolder>
                                 <dateLibrary>legacy</dateLibrary>
                                 <generateApi>false</generateApi>
                             </configOptions>
