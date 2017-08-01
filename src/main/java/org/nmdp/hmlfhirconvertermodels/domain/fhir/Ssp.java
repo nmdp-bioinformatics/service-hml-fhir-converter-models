@@ -25,9 +25,12 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  */
 
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 
 import java.io.Serializable;
 
+
+@FhirResource
 public class Ssp extends Observation implements Serializable {
     private String locus;
 

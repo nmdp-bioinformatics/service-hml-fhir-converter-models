@@ -1,6 +1,7 @@
 package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Observations;
 
 import java.util.Date;
@@ -31,6 +32,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 
+
+@FhirResource(parentResourceType = Patient.class)
 public class Specimen implements Serializable {
     private Identifier identifier;
     private Collection collection;

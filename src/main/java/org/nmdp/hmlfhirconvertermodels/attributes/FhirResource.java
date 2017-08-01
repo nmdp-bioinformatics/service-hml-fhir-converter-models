@@ -1,7 +1,7 @@
-package org.nmdp.hmlfhirconvertermodels.domain.fhir;
+package org.nmdp.hmlfhirconvertermodels.attributes;
 
 /**
- * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 5/26/17.
+ * Created by Andrew S. Brown, Ph.D., <andrew@nmdp.org>, on 7/31/17.
  * <p>
  * service-hml-fhir-converter-models
  * Copyright (c) 2012-2017 National Marrow Donor Program (NMDP)
@@ -24,20 +24,15 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.apache.commons.lang3.StringUtils;
-import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import java.io.Serializable;
 
+@Target(value = ElementType.TYPE)
+@Retention(value = RetentionPolicy.RUNTIME)
+public @interface FhirResource {
 
-@FhirResource
-public class GenotypingResultsHaploid extends StructureDefinition implements Serializable {
-
-    public Boolean hasValue() {
-        
-
-        if (super.hasValue()) { return true; }
-
-        return false;
-    }
+    Class<?> parentResourceType() default Object.class;
 }

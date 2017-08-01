@@ -26,10 +26,13 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.*;
 
 import java.io.Serializable;
 
+
+@FhirResource
 public class Observation implements Serializable {
 
     private Identifier identifier;

@@ -26,10 +26,13 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 
 import java.net.URL;
 import java.io.Serializable;
 
+
+@FhirResource
 public class StructureDefinition implements Serializable {
 
     private URL url;

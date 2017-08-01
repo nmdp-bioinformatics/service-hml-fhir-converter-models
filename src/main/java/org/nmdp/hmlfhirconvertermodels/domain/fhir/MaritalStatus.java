@@ -24,8 +24,12 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
+
 import java.io.Serializable;
 
+
+@FhirResource
 public enum MaritalStatus implements Serializable {
     DIVORCED,
     WIDOWED,

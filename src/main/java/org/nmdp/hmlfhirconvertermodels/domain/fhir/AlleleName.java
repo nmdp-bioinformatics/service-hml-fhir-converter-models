@@ -25,9 +25,11 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  */
 
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 
 import java.io.Serializable;
 
+@FhirResource
 public class AlleleName extends StructureDefinition implements Serializable {
     private String allele;
 

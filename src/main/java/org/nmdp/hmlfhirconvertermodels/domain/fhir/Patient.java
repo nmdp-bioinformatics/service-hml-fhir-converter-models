@@ -26,6 +26,8 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
 
 import ch.qos.logback.core.encoder.ByteArrayUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirPrimaryResource;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Glstrings;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Haploids;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.Specimens;
@@ -35,6 +37,8 @@ import java.util.Date;
 
 import java.io.Serializable;
 
+@FhirPrimaryResource
+@FhirResource
 public class Patient implements Serializable {
     private Identifier identifier;
     private Boolean active;

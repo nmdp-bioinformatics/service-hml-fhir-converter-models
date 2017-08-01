@@ -24,11 +24,12 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  * > http://www.opensource.org/licenses/lgpl-license.php
  */
 
-import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 
 import java.io.Serializable;
 
-public class Chromosome implements Serializable {
+@FhirResource
+public class  Chromosome implements Serializable {
     public Boolean hasValue() {
         
 

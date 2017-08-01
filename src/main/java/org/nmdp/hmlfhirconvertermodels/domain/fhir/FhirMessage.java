@@ -25,6 +25,7 @@ package org.nmdp.hmlfhirconvertermodels.domain.fhir;
  */
 
 import org.apache.commons.lang3.StringUtils;
+import org.nmdp.hmlfhirconvertermodels.attributes.FhirResource;
 import org.nmdp.hmlfhirconvertermodels.domain.fhir.lists.*;
 
 import java.io.Serializable;
