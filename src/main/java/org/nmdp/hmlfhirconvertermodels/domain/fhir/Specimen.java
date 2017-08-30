@@ -45,6 +45,7 @@ public class Specimen implements Serializable {
     private String note;
     private Type type;
     private Observations observations;
+    private Object subject;
 
     public Identifier getIdentifier() {
         return identifier;
@@ -126,6 +127,14 @@ public class Specimen implements Serializable {
         this.observations = observations;
     }
 
+    public Object getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Object subject) {
+        this.subject = subject;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -164,12 +173,12 @@ public class Specimen implements Serializable {
         result = 31 * result + (getNote() != null ? getNote().hashCode() : 0);
         result = 31 * result + (getType() != null ? getType().hashCode() : 0);
         result = 31 * result + (getObservations() != null ? getObservations().hashCode() : 0);
+        result = 31 * result + (getSubject() != null ? getSubject().hashCode() : 0);
+
         return result;
     }
 
     public Boolean hasValue() {
-        
-
         if (getIdentifier() != null && getIdentifier().hasValue()) { return true; }
         if (getCollection() != null && getCollection().hasValue()) { return true; }
         if (!StringUtils.isBlank(getAccessionIdentifier())) { return true; }
@@ -180,6 +189,7 @@ public class Specimen implements Serializable {
         if (!StringUtils.isBlank(getNote())) { return true; }
         if (getType() != null && getType().hasValue()) { return true; }
         if (getObservations() != null && getObservations().hasValue()) { return true; }
+        if (getSubject() != null) { return true; }
 
         return false;
     }
