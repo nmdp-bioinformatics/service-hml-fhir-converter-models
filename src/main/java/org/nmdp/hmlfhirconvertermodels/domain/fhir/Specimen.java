@@ -46,6 +46,7 @@ public class Specimen implements Serializable {
     private Type type;
     private Observations observations;
     private Object subject;
+    private Object reference;
 
     public Identifier getIdentifier() {
         return identifier;
@@ -135,6 +136,14 @@ public class Specimen implements Serializable {
         this.subject = subject;
     }
 
+    public Object getReference() {
+        return reference;
+    }
+
+    public void setReference(Object reference) {
+        this.reference = reference;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -158,7 +167,11 @@ public class Specimen implements Serializable {
             return false;
         if (getNote() != null ? !getNote().equals(specimen.getNote()) : specimen.getNote() != null) return false;
         if (getType() != null ? !getType().equals(specimen.getType()) : specimen.getType() != null) return false;
-        return getObservations() != null ? getObservations().equals(specimen.getObservations()) : specimen.getObservations() == null;
+        if (getObservations() != null ? !getObservations().equals(specimen.getObservations()) : specimen.getObservations() != null)
+            return false;
+        if (getSubject() != null ? !getSubject().equals(specimen.getSubject()) : specimen.getSubject() != null)
+            return false;
+        return getReference() != null ? getReference().equals(specimen.getReference()) : specimen.getReference() == null;
     }
 
     @Override
@@ -174,7 +187,7 @@ public class Specimen implements Serializable {
         result = 31 * result + (getType() != null ? getType().hashCode() : 0);
         result = 31 * result + (getObservations() != null ? getObservations().hashCode() : 0);
         result = 31 * result + (getSubject() != null ? getSubject().hashCode() : 0);
-
+        result = 31 * result + (getReference() != null ? getReference().hashCode() : 0);
         return result;
     }
 
@@ -190,6 +203,7 @@ public class Specimen implements Serializable {
         if (getType() != null && getType().hasValue()) { return true; }
         if (getObservations() != null && getObservations().hasValue()) { return true; }
         if (getSubject() != null) { return true; }
+        if (getReference() != null) { return true; }
 
         return false;
     }
