@@ -40,7 +40,6 @@ public class Observation implements Serializable {
     private Status status;
     private Category category;
     private Code code;
-    private String subject;
     private String context;
     private DateTime effective;
     private DateTime issued;
@@ -63,6 +62,8 @@ public class Observation implements Serializable {
     private GeneticsPhaseSet geneticsPhaseSet;
     private GenotypingResultsMethod genotypingResultsMethod;
     private GenotypingResultsHaploids genotypingResultsHaploids;
+    private String subject;
+    private Object reference;
 
 
     public Identifier getIdentifier() {
@@ -111,6 +112,14 @@ public class Observation implements Serializable {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public Object getReference() {
+        return reference;
+    }
+
+    public void setReference(Object reference) {
+        this.reference = reference;
     }
 
     public String getContext() {
