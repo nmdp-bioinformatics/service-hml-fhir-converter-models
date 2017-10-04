@@ -35,6 +35,7 @@ public class FhirMessage implements Serializable {
     private Organization organization;
     private Patients patients;
     private String id;
+    private String fhirId;
 
     public Organization getOrganization() {
         return organization;
@@ -54,6 +55,14 @@ public class FhirMessage implements Serializable {
 
     public String getId() {
         return id;
+    }
+
+    public String getFhirId() {
+        return fhirId;
+    }
+
+    public void setFhirId(String fhirId) {
+        this.fhirId = fhirId;
     }
 
     @Override
